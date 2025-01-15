@@ -1,0 +1,79 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-12-31 17:13:12.188815",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "sample_name",
+  "sample_group",
+  "excepted_start_date",
+  "excepted_end_date",
+  "status",
+  "column_break_xasw",
+  "qty"
+ ],
+ "fields": [
+  {
+   "fieldname": "sample_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Sample Name",
+   "options": "Sample Request",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Qty",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sample_group",
+   "fieldtype": "Data",
+   "label": "Sample Group",
+   "reqd": 1
+  },
+  {
+   "fieldname": "excepted_start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Excepted Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "excepted_end_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Excepted End Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_xasw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "columns": 1,
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Status"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-01-15 10:50:00.525313",
+ "modified_by": "Administrator",
+ "module": "Meteor ERP",
+ "name": "Project Request Sample Child",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

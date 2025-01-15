@@ -1,0 +1,162 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{project_request}-{sample_name}",
+ "creation": "2025-01-15 07:07:05.231159",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "project_request",
+  "sample_name",
+  "sample_group",
+  "excepted_start_date",
+  "excepted_end_date",
+  "company_type",
+  "benchmark_logo",
+  "amended_from",
+  "column_break_xasw",
+  "sample_tipe",
+  "qty",
+  "default_uom",
+  "notes",
+  "section_break_iglu",
+  "bom"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "sample_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Sample Name",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "sample_group",
+   "fieldtype": "Data",
+   "label": "Sample Group",
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "excepted_start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Excepted Start Date",
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "excepted_end_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Excepted End Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "benchmark_logo",
+   "fieldtype": "Attach Image",
+   "label": "Benchmark Logo"
+  },
+  {
+   "fieldname": "column_break_xasw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sample_tipe",
+   "fieldtype": "Data",
+   "label": "Sample Tipe"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "columns": 1,
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Qty",
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "default_uom",
+   "fieldtype": "Link",
+   "label": "Default Uom",
+   "options": "UOM",
+   "reqd": 1
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "section_break_iglu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "bom",
+   "fieldtype": "Table",
+   "label": "BOM",
+   "options": "Sample Request BOM child"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Sample Request",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "project_request",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Project Request",
+   "options": "Project Request",
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "company_type",
+   "fieldtype": "Link",
+   "label": "Company Type",
+   "options": "Company",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-01-15 12:05:56.268857",
+ "modified_by": "Administrator",
+ "module": "Meteor ERP",
+ "name": "Sample Request",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

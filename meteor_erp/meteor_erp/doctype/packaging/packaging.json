@@ -1,0 +1,283 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-01-03 04:01:13.623486",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_dmr9",
+  "packaging_code",
+  "packaging_name",
+  "packaging_group",
+  "packaging_type",
+  "packaging_selected",
+  "packaging_selected_customer_supplier",
+  "column_break_qoqg",
+  "amended_from",
+  "default_unit_of_measure",
+  "opening_stock",
+  "valuation_rate",
+  "standard_selling_rate",
+  "description_section",
+  "brand",
+  "description",
+  "unit_of_measure_section",
+  "uom",
+  "column_break_wtes",
+  "conversion_factor",
+  "inventory_section",
+  "shelf_life_in_days",
+  "end_of_life",
+  "valuation_method",
+  "column_break_nxqw",
+  "warranty_period_in_days",
+  "weight_per_unit",
+  "weight_uom",
+  "purchasing_section",
+  "default_purchase_unit_of_measure",
+  "lead_time_in_days",
+  "minimum_order_qty",
+  "safety_stock",
+  "column_break_hnof",
+  "supplier_items"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_dmr9",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Packaging",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "packaging_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Packaging Code",
+   "reqd": 1
+  },
+  {
+   "fieldname": "packaging_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Packaging Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "packaging_group",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Packaging Group",
+   "options": "Pangan\nSupplement\nCosmetics",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_qoqg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "packaging_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Packaging Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "packaging_selected",
+   "fieldtype": "Link",
+   "label": "Packaging Selected",
+   "link_filters": "[[\"DocType\",\"name\",\"in\",[\"Customer\",\"Supplier\"]]]",
+   "options": "DocType",
+   "reqd": 1
+  },
+  {
+   "fieldname": "default_unit_of_measure",
+   "fieldtype": "Link",
+   "label": "Default Unit of Measure",
+   "options": "UOM",
+   "reqd": 1
+  },
+  {
+   "fieldname": "opening_stock",
+   "fieldtype": "Int",
+   "label": "Opening Stock",
+   "reqd": 1
+  },
+  {
+   "fieldname": "valuation_rate",
+   "fieldtype": "Currency",
+   "label": "Valuation Rate",
+   "reqd": 1
+  },
+  {
+   "fieldname": "standard_selling_rate",
+   "fieldtype": "Currency",
+   "label": "Standard Selling Rate",
+   "reqd": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "description_section",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "brand",
+   "fieldtype": "Data",
+   "label": "Brand"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "unit_of_measure_section",
+   "fieldtype": "Section Break",
+   "label": "Unit of Measure"
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "conversion_factor",
+   "fieldtype": "Data",
+   "label": "Conversion Factor"
+  },
+  {
+   "fieldname": "column_break_wtes",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "inventory_section",
+   "fieldtype": "Section Break",
+   "label": "Inventory"
+  },
+  {
+   "fieldname": "shelf_life_in_days",
+   "fieldtype": "Int",
+   "label": "Shelf Life In Days"
+  },
+  {
+   "fieldname": "end_of_life",
+   "fieldtype": "Date",
+   "label": "End of Life"
+  },
+  {
+   "fieldname": "column_break_nxqw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "valuation_method",
+   "fieldtype": "Select",
+   "label": "Valuation Method",
+   "options": "\nFIFO\nMoving Average\nLIFO"
+  },
+  {
+   "fieldname": "warranty_period_in_days",
+   "fieldtype": "Int",
+   "label": "Warranty Period (in days)"
+  },
+  {
+   "fieldname": "weight_per_unit",
+   "fieldtype": "Float",
+   "label": "Weight Per Unit"
+  },
+  {
+   "fieldname": "weight_uom",
+   "fieldtype": "Link",
+   "label": "Weight UOM",
+   "options": "UOM"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "purchasing_section",
+   "fieldtype": "Section Break",
+   "label": "Purchasing"
+  },
+  {
+   "fieldname": "default_purchase_unit_of_measure",
+   "fieldtype": "Link",
+   "label": "Default Purchase Unit of Measure",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "column_break_hnof",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "lead_time_in_days",
+   "fieldtype": "Int",
+   "label": "Lead Time in days"
+  },
+  {
+   "fieldname": "minimum_order_qty",
+   "fieldtype": "Float",
+   "label": "Minimum Order Qty"
+  },
+  {
+   "fieldname": "safety_stock",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Safety Stock"
+  },
+  {
+   "fieldname": "supplier_items",
+   "fieldtype": "Table",
+   "label": "Supplier Items",
+   "options": "Item Supplier"
+  },
+  {
+   "fieldname": "packaging_selected_customer_supplier",
+   "fieldtype": "Dynamic Link",
+   "label": "Packaging Selected Customer Supplier",
+   "options": "packaging_selected"
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-01-10 05:37:40.002559",
+ "modified_by": "Administrator",
+ "module": "Meteor ERP",
+ "name": "Packaging",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "packaging_code,packaging_name",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "packaging_code"
+}

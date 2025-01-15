@@ -1,0 +1,47 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-12-31 10:00:25.164890",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "bom",
+  "column_break_gjvj",
+  "is_approved"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_break_gjvj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "bom",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "BOM",
+   "options": "BOM"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "is_approved",
+   "fieldtype": "Check",
+   "ignore_user_permissions": 1,
+   "in_list_view": 1,
+   "label": "Is Approved"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-01-15 12:22:22.429104",
+ "modified_by": "Administrator",
+ "module": "Meteor ERP",
+ "name": "Sample Request BOM child",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

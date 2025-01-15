@@ -241,4 +241,33 @@ app_license = "mit"
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-
+fixtures = [
+    # export all records from Table
+    #"Workspace",
+    "Industry Type",
+    "Raw Material",
+    "Product Group",
+    "Product Category",
+    "Client Script",
+    #"Custom DocPerm"
+    {"dt": "Role", "filters": [
+        ["name", "in", [
+            "Purchasing Manager",
+            "Purchasing Staff",
+           
+        ]]
+    ]},
+    {"doctype": "Custom DocPerm", "filters": [
+        ["role", "in", [
+           "Purchasing Manager",
+            "Purchasing Staff",
+        ]]
+    ]},
+    {"dt": "Report", "filters": [
+        ["name", "in", [
+            "Purchase Analytics",
+            "Purchase Order Analysis",
+           
+        ]]
+    ]},
+]

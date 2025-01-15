@@ -1,6 +1,11 @@
 {
- "charts": [],
- "content": "[{\"id\":\"qUSVTbx_mc\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Marketing &amp; Sales</span>\",\"col\":12}},{\"id\":\"bmUxXEwvbS\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"GGtTH8Cyzq\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Marketing</b></span>\",\"col\":12}},{\"id\":\"YreAz0zmtj\",\"type\":\"card\",\"data\":{\"card_name\":\"Sales Pipeline\",\"col\":3}},{\"id\":\"lHqLMXjZp6\",\"type\":\"card\",\"data\":{\"card_name\":\"Campaign Management\",\"col\":3}},{\"id\":\"qdNf1KQ3l6\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Sales</b></span>\",\"col\":12}},{\"id\":\"hsu3wC1BU3\",\"type\":\"card\",\"data\":{\"card_name\":\"Selling\",\"col\":3}},{\"id\":\"I3JhFdEPh-\",\"type\":\"card\",\"data\":{\"card_name\":\"Items Product\",\"col\":3}},{\"id\":\"hONA5CnsqP\",\"type\":\"card\",\"data\":{\"card_name\":\"Pricing\",\"col\":3}},{\"id\":\"O4ApCmHWNS\",\"type\":\"card\",\"data\":{\"card_name\":\"Reference\",\"col\":3}},{\"id\":\"p0X_USB763\",\"type\":\"card\",\"data\":{\"card_name\":\"Key Report\",\"col\":4}}]",
+ "charts": [
+  {
+   "chart_name": "Customer",
+   "label": "Customer Register"
+  }
+ ],
+ "content": "[{\"id\":\"bmUxXEwvbS\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"qdNf1KQ3l6\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Sales</b></span>\",\"col\":12}},{\"id\":\"KC9Ei-N6m-\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Customer Register\",\"col\":12}},{\"id\":\"hsu3wC1BU3\",\"type\":\"card\",\"data\":{\"card_name\":\"Selling\",\"col\":3}}]",
  "creation": "2024-11-20 18:07:10.797930",
  "custom_blocks": [],
  "docstatus": 0,
@@ -96,296 +101,8 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Campaign Management",
-   "link_count": 2,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Campaign",
-   "link_count": 0,
-   "link_to": "Campaign",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Email Campaign",
-   "link_count": 0,
-   "link_to": "Email Campaign",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Items Product",
-   "link_count": 2,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Item Product",
-   "link_count": 0,
-   "link_to": "Item",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Item Group",
-   "link_count": 0,
-   "link_to": "Item Group",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Pricing",
-   "link_count": 5,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Item Product Price",
-   "link_count": 0,
-   "link_to": "Item Price",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Promotional Scheme",
-   "link_count": 0,
-   "link_to": "Promotional Scheme",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Pricing Rule",
-   "link_count": 0,
-   "link_to": "Pricing Rule",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Shipping Rule",
-   "link_count": 0,
-   "link_to": "Shipping Rule",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Coupon Code",
-   "link_count": 0,
-   "link_to": "Coupon Code",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Reference",
-   "link_count": 4,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Sales Partner",
-   "link_count": 0,
-   "link_to": "Sales Partner",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Sales Person",
-   "link_count": 0,
-   "link_to": "Sales Person",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Terms and Conditions",
-   "link_count": 0,
-   "link_to": "Terms and Conditions",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Sales Taxes and Charges Template",
-   "link_count": 0,
-   "link_to": "Sales Taxes and Charges Template",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Key Report",
-   "link_count": 5,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Sales Analytics",
-   "link_count": 0,
-   "link_to": "Sales Analytics",
-   "link_type": "Report",
-   "onboard": 0,
-   "report_ref_doctype": "Sales Order",
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Sales Order Analysis",
-   "link_count": 0,
-   "link_to": "Sales Order Analysis",
-   "link_type": "Report",
-   "onboard": 0,
-   "report_ref_doctype": "Sales Order",
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Sales Funnel",
-   "link_count": 0,
-   "link_to": "sales-funnel",
-   "link_type": "Page",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Sales Order Trends",
-   "link_count": 0,
-   "link_to": "Sales Order Trends",
-   "link_type": "Report",
-   "onboard": 0,
-   "report_ref_doctype": "Sales Order",
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Quotation Trends",
-   "link_count": 0,
-   "link_to": "Quotation Trends",
-   "link_type": "Report",
-   "onboard": 0,
-   "report_ref_doctype": "Quotation",
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Sales Pipeline",
-   "link_count": 5,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Lead",
-   "link_count": 0,
-   "link_to": "Lead",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Opportunity",
-   "link_count": 0,
-   "link_to": "Opportunity",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Contract",
-   "link_count": 0,
-   "link_to": "Contract",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Appointment",
-   "link_count": 0,
-   "link_to": "Appointment",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Newsletter",
-   "link_count": 0,
-   "link_to": "Newsletter",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "Selling",
-   "link_count": 5,
+   "link_count": 4,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -403,16 +120,6 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Sales Quotation",
-   "link_count": 0,
-   "link_to": "Quotation",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "Sales Order",
    "link_count": 0,
    "link_to": "Sales Order",
@@ -423,9 +130,9 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Sales Invoice",
+   "label": "Project Request",
    "link_count": 0,
-   "link_to": "Sales Invoice",
+   "link_to": "Project Request",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -433,15 +140,15 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Project Request",
+   "label": "Sample Request",
    "link_count": 0,
-   "link_to": "Project",
+   "link_to": "Sample Request",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
   }
  ],
- "modified": "2024-11-20 19:49:24.464507",
+ "modified": "2025-01-15 08:33:26.094246",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Marketing & Sales",
@@ -450,7 +157,14 @@
  "parent_page": "",
  "public": 1,
  "quick_lists": [],
- "roles": [],
+ "roles": [
+  {
+   "role": "Marketing Staff"
+  },
+  {
+   "role": "Marketing Executive"
+  }
+ ],
  "sequence_id": 39.0,
  "shortcuts": [],
  "title": "Marketing & Sales"
