@@ -61,7 +61,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Purchasing",
-   "link_count": 4,
+   "link_count": 3,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -95,19 +95,9 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Packaging",
-   "link_count": 0,
-   "link_to": "Packaging",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
   }
  ],
- "modified": "2025-01-14 16:41:51.419658",
+ "modified": "2025-01-16 08:31:27.545838",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Purchasing",

@@ -23,19 +23,18 @@
    "options": "BOM"
   },
   {
-   "allow_on_submit": 1,
    "default": "0",
    "fieldname": "is_approved",
    "fieldtype": "Check",
-   "ignore_user_permissions": 1,
    "in_list_view": 1,
-   "label": "Is Approved"
+   "label": "Is Approved",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-01-15 12:22:22.429104",
+ "modified": "2025-01-27 01:32:28.676337",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Sample Request BOM child",

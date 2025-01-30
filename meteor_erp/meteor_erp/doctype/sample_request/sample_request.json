@@ -96,12 +96,6 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "bom",
-   "fieldtype": "Table",
-   "label": "BOM",
-   "options": "Sample Request BOM child"
-  },
-  {
    "fieldname": "amended_from",
    "fieldtype": "Link",
    "label": "Amended From",
@@ -128,12 +122,18 @@
    "label": "Company Type",
    "options": "Company",
    "reqd": 1
+  },
+  {
+   "fieldname": "bom",
+   "fieldtype": "Table",
+   "label": "BOM",
+   "options": "Sample Request BOM child"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-15 12:05:56.268857",
+ "modified": "2025-01-27 01:26:47.146148",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Sample Request",

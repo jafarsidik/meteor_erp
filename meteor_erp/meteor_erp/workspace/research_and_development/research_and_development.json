@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"AArN3R13wa\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Resource &amp; Development</span>\",\"col\":12}},{\"id\":\"SiDD6K7sGk\",\"type\":\"card\",\"data\":{\"card_name\":\"Project\",\"col\":3}},{\"id\":\"dwim0tNfIW\",\"type\":\"card\",\"data\":{\"card_name\":\"Manufacture\",\"col\":3}},{\"id\":\"PWY-IpQXZD\",\"type\":\"card\",\"data\":{\"card_name\":\"Inventory\",\"col\":3}}]",
+ "content": "[{\"id\":\"AArN3R13wa\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Resource &amp; Development</span>\",\"col\":12}},{\"id\":\"SiDD6K7sGk\",\"type\":\"card\",\"data\":{\"card_name\":\"Project\",\"col\":3}},{\"id\":\"dwim0tNfIW\",\"type\":\"card\",\"data\":{\"card_name\":\"Manufacture\",\"col\":3}},{\"id\":\"PWY-IpQXZD\",\"type\":\"card\",\"data\":{\"card_name\":\"Inventory\",\"col\":3}},{\"id\":\"jQ3k9bpdUk\",\"type\":\"paragraph\",\"data\":{\"text\":\"<b>Items</b>\",\"col\":12}},{\"id\":\"RZh6wHGG1I\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Materials\",\"col\":7}},{\"id\":\"ZRWOUjQ6IO\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Products\",\"col\":7}}]",
  "creation": "2024-11-20 19:53:22.835686",
  "custom_blocks": [],
  "docstatus": 0,
@@ -65,7 +65,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Inventory",
-   "link_count": 3,
+   "link_count": 1,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -79,32 +79,9 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Product",
-   "link_count": 0,
-   "link_to": "Item",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Raw Material",
-   "link_count": 0,
-   "link_to": "Item",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link",
-   "filters":{
-    "item_group":"Raw Material"
-   }
   }
  ],
- "modified": "2025-01-15 11:51:32.175524",
+ "modified": "2025-01-17 13:51:56.757380",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Research and Development",
@@ -125,6 +102,21 @@
   }
  ],
  "sequence_id": 40.0,
- "shortcuts": [],
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Products",
+   "type": "URL",
+   "url": "http://103.167.218.116:85/app/item?item_group=%5B%22descendants+of+%28inclusive%29%22%2C%22Products%22%5D"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Raw Materials",
+   "type": "URL",
+   "url": "http://103.167.218.116:85/app/item?item_group=%5B%22descendants+of+%28inclusive%29%22%2C%22Raw+Material%22%5D"
+  }
+ ],
  "title": "Research and Development"
 }
