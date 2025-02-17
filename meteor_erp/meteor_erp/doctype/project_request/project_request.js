@@ -1,9 +1,20 @@
 // Copyright (c) 2024, JF and contributors
 // For license information, please see license.txt
 frappe.ui.form.on("Project Request", {
+    onload(frm){
+        if (!frm.is_new()) {
+            frm.toggle_display(['sample_section'],true);
+            frm.trigger("list_data_sample_asy");
+
+        }else{
+            frm.set_value('list_data_sample', '');
+            frm.set_df_property("list_data_sample", "options", ' ');
+        }
+    },
     refresh: function(frm) {
        // frappe.breadcrumbs.clear()
         //$("#navbar-breadcrumbs").css({'visibility':'hidden'});
+       
         if (!frm.doc.created_by) {
             frm.set_value('created_by', frappe.session.user);
         }
@@ -36,6 +47,9 @@ frappe.ui.form.on("Project Request", {
             // })
            
             
+        }else{
+            frm.set_value('list_data_sample', '');
+            frm.set_df_property("list_data_sample", "options", ' ');
         }
     },
     async list_data_sample_asy(frm){

@@ -5,7 +5,7 @@
    "label": "Customer Register"
   }
  ],
- "content": "[{\"id\":\"bmUxXEwvbS\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"qdNf1KQ3l6\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Sales</b></span>\",\"col\":12}},{\"id\":\"KC9Ei-N6m-\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Customer Register\",\"col\":12}},{\"id\":\"hsu3wC1BU3\",\"type\":\"card\",\"data\":{\"card_name\":\"Selling\",\"col\":3}}]",
+ "content": "[{\"id\":\"bmUxXEwvbS\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"qdNf1KQ3l6\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Sales</b></span>\",\"col\":12}},{\"id\":\"KC9Ei-N6m-\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Customer Register\",\"col\":12}},{\"id\":\"hsu3wC1BU3\",\"type\":\"card\",\"data\":{\"card_name\":\"Selling\",\"col\":3}},{\"id\":\"7fLzcjn1pu\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Item</b></span>\",\"col\":12}},{\"id\":\"RhlwWTP7o4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material\",\"col\":7}},{\"id\":\"7wGrFMM8EL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Packaging\",\"col\":7}},{\"id\":\"THGnYyajVg\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Products\",\"col\":7}}]",
  "creation": "2024-11-20 18:07:10.797930",
  "custom_blocks": [],
  "docstatus": 0,
@@ -102,7 +102,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Selling",
-   "link_count": 4,
+   "link_count": 5,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -146,9 +146,19 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Material Request",
+   "link_count": 0,
+   "link_to": "Material Request",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2025-01-15 08:33:26.094246",
+ "modified": "2025-02-17 16:58:15.561895",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Marketing & Sales",
@@ -166,6 +176,32 @@
   }
  ],
  "sequence_id": 39.0,
- "shortcuts": [],
+ "shortcuts": [
+  {
+   "color": "Yellow",
+   "doc_view": "List",
+   "label": "Packaging",
+   "link_to": "Item",
+   "stats_filter": "[[\"Item\",\"item_group\",\"=\",\"Packaging\",false]]",
+   "type": "DocType",
+   "url": "http://103.167.218.116:85/app/item?item_group=%5B%22descendants+of+%28inclusive%29%22%2C%22Packaging%22%5D"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Raw Material",
+   "link_to": "Item",
+   "stats_filter": "[[\"Item\",\"item_group\",\"=\",\"Raw Material\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "label": "Products",
+   "link_to": "Item",
+   "stats_filter": "[[\"Item\",\"item_group\",\"=\",\"Products\",false]]",
+   "type": "DocType"
+  }
+ ],
  "title": "Marketing & Sales"
 }

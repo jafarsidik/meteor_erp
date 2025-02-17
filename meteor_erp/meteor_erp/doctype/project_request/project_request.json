@@ -17,6 +17,7 @@
   "sales_quotation",
   "sales_order",
   "sales_invoice",
+  "customer_po",
   "amended_from",
   "created_by",
   "notes",
@@ -101,6 +102,7 @@
    "depends_on": "eval:doc.project_type==\"Paid\"",
    "fieldname": "sales_order",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Sales Order",
    "options": "Sales Order"
   },
@@ -108,12 +110,14 @@
    "depends_on": "eval:doc.project_type==\"Paid\"",
    "fieldname": "sales_quotation",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Sales Quotation"
   },
   {
    "depends_on": "eval:doc.project_type==\"Paid\"",
    "fieldname": "sales_invoice",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Sales Invoice"
   },
   {
@@ -141,6 +145,12 @@
    "fieldname": "list_data_sample",
    "fieldtype": "HTML",
    "label": "List Data Sample"
+  },
+  {
+   "depends_on": "eval:doc.project_type==\"Paid\"",
+   "fieldname": "customer_po",
+   "fieldtype": "Data",
+   "label": "Customer PO"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -151,7 +161,7 @@
    "link_fieldname": "project_request"
   }
  ],
- "modified": "2025-01-16 09:55:12.083202",
+ "modified": "2025-02-14 21:48:02.386941",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Project Request",

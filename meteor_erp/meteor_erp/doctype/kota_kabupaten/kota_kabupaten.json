@@ -1,0 +1,72 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "format:{kode_kota_kabupaten}",
+ "creation": "2025-02-12 22:41:05.767601",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "nama_kota_kabupaten",
+  "kode_kota_kabupaten",
+  "provinsi",
+  "column_break_abtl",
+  "deskripsi"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_break_abtl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "deskripsi",
+   "fieldtype": "Small Text",
+   "label": "Deskripsi"
+  },
+  {
+   "fieldname": "provinsi",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Provinsi",
+   "options": "Provinsi"
+  },
+  {
+   "fieldname": "nama_kota_kabupaten",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nama Kota/Kabupaten"
+  },
+  {
+   "fieldname": "kode_kota_kabupaten",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Kode Kota Kabupaten"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-12 23:03:37.322013",
+ "modified_by": "Administrator",
+ "module": "Meteor ERP",
+ "name": "Kota Kabupaten",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "nama_kota_kabupaten"
+}

@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"Rh6A5ESOif\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">PPIC</span>\",\"col\":12}},{\"id\":\"rMI7m8Hs9y\",\"type\":\"card\",\"data\":{\"card_name\":\"Manufacture\",\"col\":4}},{\"id\":\"zGfTSninNY\",\"type\":\"card\",\"data\":{\"card_name\":\"Purchasing\",\"col\":4}},{\"id\":\"_X2sI68BfK\",\"type\":\"card\",\"data\":{\"card_name\":\"Inventory\",\"col\":4}}]",
+ "content": "[{\"id\":\"Rh6A5ESOif\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">PPIC</span>\",\"col\":12}},{\"id\":\"rMI7m8Hs9y\",\"type\":\"card\",\"data\":{\"card_name\":\"Manufacture\",\"col\":4}},{\"id\":\"_X2sI68BfK\",\"type\":\"card\",\"data\":{\"card_name\":\"Inventory\",\"col\":4}},{\"id\":\"2YsymWQr-R\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Item</b></span>\",\"col\":12}},{\"id\":\"aY0xFHihQe\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material\",\"col\":7}},{\"id\":\"2-P_ZCrm4l\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Product\",\"col\":7}},{\"id\":\"jYOkz_Sxkx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Packaging\",\"col\":7}},{\"id\":\"erdcciRHWk\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sample\",\"col\":7}},{\"id\":\"a1YAJ2OJpC\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Trial\",\"col\":7}}]",
  "creation": "2024-12-19 12:39:45.083836",
  "custom_blocks": [],
  "docstatus": 0,
@@ -26,25 +26,6 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Material Request",
-   "link_count": 0,
-   "link_to": "Material Request",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Purchasing",
-   "link_count": 1,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Purchase Request",
    "link_count": 0,
    "link_to": "Material Request",
    "link_type": "DocType",
@@ -121,7 +102,7 @@
    "type": "Link"
   }
  ],
- "modified": "2025-01-15 22:35:26.052877",
+ "modified": "2025-02-14 22:29:09.037058",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "PPIC",
@@ -145,6 +126,47 @@
   }
  ],
  "sequence_id": 42.0,
- "shortcuts": [],
+ "shortcuts": [
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Product",
+   "link_to": "Item",
+   "stats_filter": "[[\"Item\",\"item_group\",\"=\",\"Products\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "label": "Raw Material",
+   "link_to": "Item",
+   "stats_filter": "[[\"Item\",\"item_group\",\"=\",\"Raw Material\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Yellow",
+   "doc_view": "List",
+   "label": "Packaging",
+   "link_to": "Item",
+   "stats_filter": "[[\"Item\",\"item_group\",\"=\",\"Packaging\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Cyan",
+   "doc_view": "List",
+   "label": "Sample",
+   "link_to": "Item",
+   "stats_filter": "[[\"Item\",\"item_group\",\"=\",\"Sample\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Red",
+   "doc_view": "List",
+   "label": "Trial",
+   "link_to": "Item",
+   "stats_filter": "[[\"Item\",\"item_group\",\"=\",\"Trial\",false]]",
+   "type": "DocType"
+  }
+ ],
  "title": "PPIC"
 }

@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"AArN3R13wa\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Resource &amp; Development</span>\",\"col\":12}},{\"id\":\"SiDD6K7sGk\",\"type\":\"card\",\"data\":{\"card_name\":\"Project\",\"col\":3}},{\"id\":\"dwim0tNfIW\",\"type\":\"card\",\"data\":{\"card_name\":\"Manufacture\",\"col\":3}},{\"id\":\"PWY-IpQXZD\",\"type\":\"card\",\"data\":{\"card_name\":\"Inventory\",\"col\":3}},{\"id\":\"jQ3k9bpdUk\",\"type\":\"paragraph\",\"data\":{\"text\":\"<b>Items</b>\",\"col\":12}},{\"id\":\"RZh6wHGG1I\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Materials\",\"col\":7}},{\"id\":\"ZRWOUjQ6IO\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Products\",\"col\":7}}]",
+ "content": "[{\"id\":\"AArN3R13wa\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Resource &amp; Development</span>\",\"col\":12}},{\"id\":\"SiDD6K7sGk\",\"type\":\"card\",\"data\":{\"card_name\":\"Project\",\"col\":3}},{\"id\":\"dwim0tNfIW\",\"type\":\"card\",\"data\":{\"card_name\":\"Manufacture\",\"col\":3}},{\"id\":\"PWY-IpQXZD\",\"type\":\"card\",\"data\":{\"card_name\":\"Inventory\",\"col\":3}},{\"id\":\"jQ3k9bpdUk\",\"type\":\"paragraph\",\"data\":{\"text\":\"<b>Items</b>\",\"col\":12}},{\"id\":\"RZh6wHGG1I\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Materials\",\"col\":7}},{\"id\":\"ZRWOUjQ6IO\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Products\",\"col\":7}},{\"id\":\"MIMSl-6qZi\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Packaging\",\"col\":7}},{\"id\":\"vpwl7c66Qs\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Trial\",\"col\":7}},{\"id\":\"HoU6G3W108\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sample\",\"col\":7}}]",
  "creation": "2024-11-20 19:53:22.835686",
  "custom_blocks": [],
  "docstatus": 0,
@@ -81,7 +81,7 @@
    "type": "Link"
   }
  ],
- "modified": "2025-01-17 13:51:56.757380",
+ "modified": "2025-02-14 22:34:58.113866",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Research and Development",
@@ -104,18 +104,49 @@
  "sequence_id": 40.0,
  "shortcuts": [
   {
-   "color": "Grey",
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Raw Materials",
+   "link_to": "Item",
+   "stats_filter": "[[\"Item\",\"item_group\",\"=\",\"Raw Material\",false]]",
+   "type": "DocType",
+   "url": "http://103.167.218.116:85/app/item?item_group=%5B%22descendants+of+%28inclusive%29%22%2C%22Raw+Material%22%5D"
+  },
+  {
+   "color": "Blue",
    "doc_view": "List",
    "label": "Products",
-   "type": "URL",
+   "link_to": "Item",
+   "stats_filter": "[[\"Item\",\"item_group\",\"=\",\"Products\",false]]",
+   "type": "DocType",
    "url": "http://103.167.218.116:85/app/item?item_group=%5B%22descendants+of+%28inclusive%29%22%2C%22Products%22%5D"
+  },
+  {
+   "color": "Cyan",
+   "doc_view": "List",
+   "label": "Packaging",
+   "link_to": "Item",
+   "stats_filter": "[[\"Item\",\"item_group\",\"=\",\"Packaging\",false]]",
+   "type": "DocType",
+   "url": "http://103.167.218.116:85/app/item?item_group=%5B%22descendants+of+%28inclusive%29%22%2C%22Packaging%22%5D"
   },
   {
    "color": "Grey",
    "doc_view": "List",
-   "label": "Raw Materials",
-   "type": "URL",
-   "url": "http://103.167.218.116:85/app/item?item_group=%5B%22descendants+of+%28inclusive%29%22%2C%22Raw+Material%22%5D"
+   "label": "Trial",
+   "link_to": "Item",
+   "stats_filter": "[[\"Item\",\"item_group\",\"=\",\"Trial\",false]]",
+   "type": "DocType",
+   "url": "http://103.167.218.116:85/app/item?item_group=%5B%22descendants+of+%28inclusive%29%22%2C%22Trial%22%5D"
+  },
+  {
+   "color": "Red",
+   "doc_view": "List",
+   "label": "Sample",
+   "link_to": "Item",
+   "stats_filter": "[[\"Item\",\"item_group\",\"=\",\"Sample\",false]]",
+   "type": "DocType",
+   "url": "http://103.167.218.116:85/app/item?item_group=%5B%22descendants+of+%28inclusive%29%22%2C%22Sample%22%5D"
   }
  ],
  "title": "Research and Development"

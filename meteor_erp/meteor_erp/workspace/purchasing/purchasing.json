@@ -5,7 +5,7 @@
    "label": "Purchase Order Trends"
   }
  ],
- "content": "[{\"id\":\"CNBjbfE1ZB\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Purchasing</span>\",\"col\":12}},{\"id\":\"D3we0vycXO\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Purchase Order Trends\",\"col\":12}},{\"id\":\"4iSxYiK3eP\",\"type\":\"header\",\"data\":{\"text\":\"<span style=\\\"font-size: 18px; letter-spacing: 0.18px;\\\"><b>Shorcut</b></span>\",\"col\":12}},{\"id\":\"BNimuvnOdK\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Purchase Order\",\"col\":3}},{\"id\":\"Ky35s6TT9g\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"3DuX3o566O\",\"type\":\"card\",\"data\":{\"card_name\":\"Purchasing\",\"col\":4}},{\"id\":\"7TcoDIPuey\",\"type\":\"card\",\"data\":{\"card_name\":\"Supplier Setting\",\"col\":3}}]",
+ "content": "[{\"id\":\"CNBjbfE1ZB\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Purchasing</span>\",\"col\":12}},{\"id\":\"D3we0vycXO\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Purchase Order Trends\",\"col\":12}},{\"id\":\"4iSxYiK3eP\",\"type\":\"header\",\"data\":{\"text\":\"<span style=\\\"font-size: 18px; letter-spacing: 0.18px;\\\"><b>Shorcut</b></span>\",\"col\":12}},{\"id\":\"BNimuvnOdK\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Purchase Order\",\"col\":3}},{\"id\":\"Ky35s6TT9g\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"3DuX3o566O\",\"type\":\"card\",\"data\":{\"card_name\":\"Purchasing\",\"col\":4}},{\"id\":\"bIBBi2_KcJ\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"dK-W1-iJQq\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Item</b></span>\",\"col\":12}},{\"id\":\"pvYNOgutZ1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material\",\"col\":7}},{\"id\":\"ZnW-ybytYl\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Packaging\",\"col\":7}},{\"id\":\"sWEDQv6kfN\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Trial\",\"col\":7}},{\"id\":\"UQ_C6SwGfJ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Others\",\"col\":7}}]",
  "creation": "2024-11-25 22:44:07.470326",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,50 +13,11 @@
  "for_user": "",
  "hide_custom": 0,
  "icon": "money-coins-1",
- "idx": 3,
+ "idx": 4,
  "indicator_color": "",
  "is_hidden": 0,
  "label": "Purchasing",
  "links": [
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Supplier Setting",
-   "link_count": 3,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Supplier Group",
-   "link_count": 0,
-   "link_to": "Supplier Group",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Address",
-   "link_count": 0,
-   "link_to": "Address",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Contact",
-   "link_count": 0,
-   "link_to": "Contact",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
   {
    "hidden": 0,
    "is_query_report": 0,
@@ -97,7 +58,7 @@
    "type": "Link"
   }
  ],
- "modified": "2025-01-16 08:31:27.545838",
+ "modified": "2025-02-16 08:56:59.713537",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Purchasing",
@@ -118,6 +79,9 @@
   },
   {
    "role": "COO"
+  },
+  {
+   "role": "IT SUPPORT"
   }
  ],
  "sequence_id": 41.0,
@@ -129,6 +93,41 @@
    "link_to": "Purchase Order",
    "stats_filter": "[]",
    "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "label": "Raw Material",
+   "link_to": "Item",
+   "stats_filter": "[[\"Item\",\"item_group\",\"=\",\"Raw Material\",false]]",
+   "type": "DocType",
+   "url": "http://103.167.218.116:85/app/item?item_group=%5B%22descendants+of+%28inclusive%29%22%2C%22Raw+Material%22%5D"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Trial",
+   "link_to": "Item",
+   "stats_filter": "[[\"Item\",\"item_group\",\"=\",\"Trial\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Cyan",
+   "doc_view": "List",
+   "label": "Packaging",
+   "link_to": "Item",
+   "stats_filter": "[[\"Item\",\"item_group\",\"=\",\"Packaging\",false]]",
+   "type": "DocType",
+   "url": "http://103.167.218.116:85/app/item?item_group=%5B%22descendants+of+%28inclusive%29%22%2C%22Packaging%22%5D"
+  },
+  {
+   "color": "Pink",
+   "doc_view": "List",
+   "label": "Others",
+   "link_to": "Item",
+   "stats_filter": "[[\"Item\",\"item_group\",\"=\",\"Others\",false]]",
+   "type": "DocType",
+   "url": "http://103.167.218.116:85/app/item?item_group=%5B%22descendants+of+%28inclusive%29%22%2C%22Others%22%5D"
   }
  ],
  "title": "Purchasing"

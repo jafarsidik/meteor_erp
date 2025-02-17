@@ -31,11 +31,12 @@ frappe.ui.form.on('BOM', {
     },
     onload: function(frm, cdt, cdn) {
         if (frappe.user.has_role('R&D Staff')) {
-            alert("llll")
+           // alert("llll")
             frm.fields_dict['bom_list_table'].grid.fields_map['is_approved'].read_only = 1;
         }
         if (frappe.user.has_role('Marketing Staff')) {
-            frm.fields_dict['bom_list_table'].grid.get_field('is_approved').df.read_only = 0;
+            //alert("fff")
+            frm.fields_dict['bom_list_table'].grid.get_field('is_approved').df.read_only = 1;
         }
     }
 });

@@ -29,8 +29,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Sample Name",
-   "options": "Item",
-   "reqd": 1
+   "options": "Item"
   },
   {
    "allow_in_quick_entry": 1,
@@ -58,7 +57,7 @@
   {
    "fieldname": "benchmark_logo",
    "fieldtype": "Attach Image",
-   "label": "Benchmark Logo"
+   "label": "Benchmark Image"
   },
   {
    "fieldname": "column_break_xasw",
@@ -133,7 +132,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-27 01:26:47.146148",
+ "modified": "2025-02-15 00:52:53.471420",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Sample Request",

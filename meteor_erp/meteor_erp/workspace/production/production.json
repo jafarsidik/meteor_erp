@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"C-0s82O2gD\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Production</span>\",\"col\":12}},{\"id\":\"f5A6P5W1iy\",\"type\":\"card\",\"data\":{\"card_name\":\"Manufacture\",\"col\":4}},{\"id\":\"TnOPhpCWJb\",\"type\":\"card\",\"data\":{\"card_name\":\"Inventory\",\"col\":4}}]",
+ "content": "[{\"id\":\"C-0s82O2gD\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Production</span>\",\"col\":12}},{\"id\":\"f5A6P5W1iy\",\"type\":\"card\",\"data\":{\"card_name\":\"Manufacture\",\"col\":4}}]",
  "creation": "2025-01-03 03:41:09.820819",
  "custom_blocks": [],
  "docstatus": 0,
@@ -17,30 +17,10 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Manufacture",
-   "link_count": 6,
+   "link_count": 5,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Production Plan",
-   "link_count": 0,
-   "link_to": "Production Plan",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Work Order",
-   "link_count": 0,
-   "link_to": "Work Order",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
   },
   {
    "hidden": 0,
@@ -85,15 +65,6 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Inventory",
-   "link_count": 1,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "Material Request",
    "link_count": 0,
    "link_to": "Material Request",
@@ -102,7 +73,7 @@
    "type": "Link"
   }
  ],
- "modified": "2025-01-10 05:00:08.726457",
+ "modified": "2025-02-17 18:07:30.449412",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Production",
@@ -120,6 +91,9 @@
   },
   {
    "role": "Manufakturing Staff"
+  },
+  {
+   "role": "Production Admin"
   }
  ],
  "sequence_id": 43.0,

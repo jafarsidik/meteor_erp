@@ -1,0 +1,62 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "format:{kode_provinsi}",
+ "creation": "2025-02-12 22:29:36.051427",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "nama_provinsi",
+  "kode_provinsi",
+  "column_break_abtl",
+  "deskripsi"
+ ],
+ "fields": [
+  {
+   "fieldname": "nama_provinsi",
+   "fieldtype": "Data",
+   "label": "Nama Provinsi"
+  },
+  {
+   "fieldname": "column_break_abtl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "deskripsi",
+   "fieldtype": "Small Text",
+   "label": "Deskripsi"
+  },
+  {
+   "fieldname": "kode_provinsi",
+   "fieldtype": "Data",
+   "label": "Kode Provinsi"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-12 22:51:02.118172",
+ "modified_by": "Administrator",
+ "module": "Meteor ERP",
+ "name": "Provinsi",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "nama_provinsi"
+}
