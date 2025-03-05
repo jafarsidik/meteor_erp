@@ -11,6 +11,8 @@
   "expected_start_date",
   "expected_end_date",
   "company",
+  "category_md",
+  "category_tr",
   "column_break_aqcj",
   "priority",
   "project_type",
@@ -151,6 +153,18 @@
    "fieldname": "customer_po",
    "fieldtype": "Data",
    "label": "Customer PO"
+  },
+  {
+   "fieldname": "category_md",
+   "fieldtype": "Select",
+   "label": "Category MD",
+   "options": "\nPowder\nLiquid\nJelly"
+  },
+  {
+   "fieldname": "category_tr",
+   "fieldtype": "Select",
+   "label": "Category TR",
+   "options": "\nPowder\nLiquid\nJelly\nKapsul\nSoftgel"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -161,7 +175,7 @@
    "link_fieldname": "project_request"
   }
  ],
- "modified": "2025-02-14 21:48:02.386941",
+ "modified": "2025-03-05 09:53:12.622435",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Project Request",

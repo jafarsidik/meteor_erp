@@ -52,6 +52,7 @@ frappe.ui.form.on("Project Request", {
             frm.set_df_property("list_data_sample", "options", ' ');
         }
     },
+    
     async list_data_sample_asy(frm){
         
         // Fetch the data from backend (check above for sample response)
@@ -59,6 +60,7 @@ frappe.ui.form.on("Project Request", {
         html+= `<table class='table table-bordered'>
         <thead>
             <tr>
+                <th>Sample Code</th>
                 <th>Sample Name</th>
                 <th>Sample Group</th>
                 <th>Excepted Start Date</th>
@@ -70,12 +72,13 @@ frappe.ui.form.on("Project Request", {
         <tbody>`
         frappe.db.get_list('Sample Request',{
                 filters :{project_request: frm.doc.name},
-                fields: ['name','sample_name','sample_group','excepted_start_date','excepted_end_date','qty','workflow_state']
+                fields: ['name','sample_code','sample_name','sample_group','excepted_start_date','excepted_end_date','qty','workflow_state']
         }).then(record => {
             //console.log(record);
             record.forEach(values => {
                 
                 html += `<tr>
+                <td>${values.sample_code}</td>
                 <td>${values.sample_name}</td>
                 <td>${values.sample_group}</td>
                 <td>${values.excepted_start_date}</td>

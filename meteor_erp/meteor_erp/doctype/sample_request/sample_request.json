@@ -7,6 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "project_request",
+  "sample_code",
   "sample_name",
   "sample_group",
   "excepted_start_date",
@@ -26,10 +27,10 @@
   {
    "allow_in_quick_entry": 1,
    "fieldname": "sample_name",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Sample Name",
-   "options": "Item"
+   "read_only": 1
   },
   {
    "allow_in_quick_entry": 1,
@@ -127,12 +128,21 @@
    "fieldtype": "Table",
    "label": "BOM",
    "options": "Sample Request BOM child"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "sample_code",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "label": "Sample Code",
+   "options": "Item"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-02-15 00:52:53.471420",
+ "modified": "2025-03-05 14:20:47.011787",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Sample Request",

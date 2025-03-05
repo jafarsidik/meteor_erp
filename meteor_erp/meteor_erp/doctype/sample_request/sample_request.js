@@ -20,6 +20,15 @@ frappe.ui.form.on("Sample Request", {
              frm.fields_dict['bom'].grid.get_field('is_approved').df.read_only = 0;
          }
 	},
+    sample_code(frm){
+        
+        frappe.db.get_doc('Item', frm.doc.sample_code)
+        .then(doc => {
+            
+            frm.set_value('sample_name', doc.item_name)
+        })
+   
+    },
 });
 frappe.ui.form.on('BOM', {
     is_approved: function(frm, cdt, cdn) {

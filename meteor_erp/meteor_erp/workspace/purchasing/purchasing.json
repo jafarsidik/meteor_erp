@@ -5,7 +5,7 @@
    "label": "Purchase Order Trends"
   }
  ],
- "content": "[{\"id\":\"CNBjbfE1ZB\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Purchasing</span>\",\"col\":12}},{\"id\":\"D3we0vycXO\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Purchase Order Trends\",\"col\":12}},{\"id\":\"4iSxYiK3eP\",\"type\":\"header\",\"data\":{\"text\":\"<span style=\\\"font-size: 18px; letter-spacing: 0.18px;\\\"><b>Shorcut</b></span>\",\"col\":12}},{\"id\":\"BNimuvnOdK\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Purchase Order\",\"col\":3}},{\"id\":\"Ky35s6TT9g\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"3DuX3o566O\",\"type\":\"card\",\"data\":{\"card_name\":\"Purchasing\",\"col\":4}},{\"id\":\"bIBBi2_KcJ\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"dK-W1-iJQq\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Item</b></span>\",\"col\":12}},{\"id\":\"pvYNOgutZ1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material\",\"col\":7}},{\"id\":\"ZnW-ybytYl\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Packaging\",\"col\":7}},{\"id\":\"sWEDQv6kfN\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Trial\",\"col\":7}},{\"id\":\"UQ_C6SwGfJ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Others\",\"col\":7}}]",
+ "content": "[{\"id\":\"CNBjbfE1ZB\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Purchasing</span>\",\"col\":12}},{\"id\":\"D3we0vycXO\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Purchase Order Trends\",\"col\":12}},{\"id\":\"4iSxYiK3eP\",\"type\":\"header\",\"data\":{\"text\":\"<span style=\\\"font-size: 18px; letter-spacing: 0.18px;\\\"><b>Shorcut</b></span>\",\"col\":12}},{\"id\":\"BNimuvnOdK\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Purchase Order\",\"col\":3}},{\"id\":\"pHrnsN9Q2m\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Material Request\",\"col\":3}},{\"id\":\"Ky35s6TT9g\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"3DuX3o566O\",\"type\":\"card\",\"data\":{\"card_name\":\"Purchasing\",\"col\":4}},{\"id\":\"bIBBi2_KcJ\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"dK-W1-iJQq\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Item</b></span>\",\"col\":12}},{\"id\":\"pvYNOgutZ1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material\",\"col\":7}},{\"id\":\"ZnW-ybytYl\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Packaging\",\"col\":7}},{\"id\":\"sWEDQv6kfN\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Trial\",\"col\":7}},{\"id\":\"UQ_C6SwGfJ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Others\",\"col\":7}}]",
  "creation": "2024-11-25 22:44:07.470326",
  "custom_blocks": [],
  "docstatus": 0,
@@ -58,7 +58,7 @@
    "type": "Link"
   }
  ],
- "modified": "2025-02-16 08:56:59.713537",
+ "modified": "2025-02-24 17:44:00.839585",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Purchasing",
@@ -109,6 +109,14 @@
    "label": "Trial",
    "link_to": "Item",
    "stats_filter": "[[\"Item\",\"item_group\",\"=\",\"Trial\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Red",
+   "doc_view": "List",
+   "label": "Material Request",
+   "link_to": "Material Request",
+   "stats_filter": "[[\"Material Request\",\"status\",\"=\",\"Pending\",false]]",
    "type": "DocType"
   },
   {

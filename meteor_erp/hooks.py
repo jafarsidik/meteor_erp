@@ -246,29 +246,33 @@ fixtures = [
     #"Workspace",
     "Item Group",
     "Industry Type",
-    "Raw Material",
-    "Product Group",
+    #"Raw Material",
+    #"Product Group",
     "Product Category",
+    "Product Type",
     "Client Script",
-    #"Custom DocPerm"
-    {"dt": "Role", "filters": [
-        ["name", "in", [
-            "Purchasing Manager",
-            "Purchasing Staff",
+    "Role",
+    "Custom DocPerm",
+    "Provinsi",
+    "Kota Kabupaten"
+    # {"dt": "Role", "filters": [
+    #     ["name", "in", [
+    #         "Purchasing Manager",
+    #         "Purchasing Staff",
            
-        ]]
-    ]},
-    {"doctype": "Custom DocPerm", "filters": [
-        ["role", "in", [
-           "Purchasing Manager",
-            "Purchasing Staff",
-        ]]
-    ]},
-    {"dt": "Report", "filters": [
-        ["name", "in", [
-            "Purchase Analytics",
-            "Purchase Order Analysis",
+    #     ]]
+    # ]},
+    # {"doctype": "Custom DocPerm", "filters": [
+    #     ["role", "in", [
+    #        "Purchasing Manager",
+    #         "Purchasing Staff",
+    #     ]]
+    # ]},
+    # {"dt": "Report", "filters": [
+    #     ["name", "in", [
+    #         "Purchase Analytics",
+    #         "Purchase Order Analysis",
            
-        ]]
-    ]},
+    #     ]]
+    # ]},
 ]
