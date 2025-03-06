@@ -1,0 +1,44 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-03-06 10:48:17.242965",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "category_file",
+  "column_break_pcvg",
+  "file"
+ ],
+ "fields": [
+  {
+   "fieldname": "category_file",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Category File",
+   "options": "\nKTP\nNPWP\nPKS\nLain-Lain"
+  },
+  {
+   "fieldname": "column_break_pcvg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "file",
+   "fieldtype": "Attach",
+   "in_list_view": 1,
+   "label": "FIle"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-03-06 10:49:47.231358",
+ "modified_by": "Administrator",
+ "module": "Meteor ERP",
+ "name": "Customer File",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

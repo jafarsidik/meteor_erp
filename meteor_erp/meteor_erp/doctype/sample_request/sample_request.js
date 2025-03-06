@@ -16,9 +16,13 @@ frappe.ui.form.on("Sample Request", {
         //     frm.set_df_property('bom', 'read_only', 1);
         //     frm.fields_dict['bom'].grid.get_field('is_approved').df.read_only = 1;
         // }
-        if (frappe.user.has_role('Marketing Staff')) {
+        //alert("Workflow State Changed: "+frm.doc.workflow_state);
+        frm.trigger('update_actual_time');
+        if (frappe.user.has_role('Marketing Staff','System Manager')) {
              frm.fields_dict['bom'].grid.get_field('is_approved').df.read_only = 0;
          }
+         
+         
 	},
     sample_code(frm){
         
@@ -29,6 +33,81 @@ frappe.ui.form.on("Sample Request", {
         })
    
     },
+    // workflow_state: function(frm) {
+    //     console.log("✅ Workflow State Changed: ", frm.doc.workflow_state);
+    //     frm.trigger('update_actual_time');
+    // },
+    update_actual_time: function(frm) {
+        if (!frm.doc.workflow_state) return;
+
+        let state = frm.doc.workflow_state;
+        
+        console.log("🔎 Menambahkan State Baru:", state);
+
+    //     // Cek apakah state ini sudah ada di child table
+        let exists = frm.doc.sample_request_actual_time.some(row => row.state === state);
+        if (exists) {
+            console.log("⚠️ State sudah ada, tidak menambahkan lagi:", state);
+            return;
+        }
+        let from_time_set = new Date(frappe.datetime.now_datetime());
+        let to_time_set = new Date(frappe.datetime.now_datetime());
+
+        let differenceMs = to_time_set - from_time_set; // Selisih dalam milidetik
+        let differenceMinutes = differenceMs / (1000 * 60); // Konversi ke menit
+
+        console.log(`Selisih waktu: ${differenceMinutes} menit`);
+        let row = frm.add_child('sample_request_actual_time', {
+            from_time: frappe.datetime.now_datetime(),
+            to_time:frappe.datetime.now_datetime(),
+            state: state,
+            time_in_mins: differenceMinutes,
+        });
+
+        frm.refresh_field('sample_request_actual_time');
+        console.log("✅ Data Ditambahkan ke Child Table:", row);
+        frm.save();  // Simpan perubahan di child table
+    }
+    // workflow_state(frm){
+    //     alert(frm.doc.workflow_state);
+    //     if(frm.doc.workflow_state == 'Draft'){
+    //         //frappe.utils.now_datetime() - self.creation
+    //         let row = frm.add_child('sample_request_actual_time', {
+    //             from_time: frappe.datetime.now_datetime(),
+    //             to_time: frappe.datetime.now_datetime(),
+    //             state: "Draft"
+    //         });
+            
+    //         frm.refresh_field('sample_request_actual_time');
+    //     }else if(frm.doc.workflow_state == 'Submitted to Marketing'){
+    //         //frappe.utils.now_datetime() - self.creation
+    //         let row = frm.add_child('sample_request_actual_time', {
+    //             from_time: frappe.datetime.now_datetime(),
+    //             to_time: frappe.datetime.now_datetime(),
+    //             state: "Submitted to Marketing"
+    //         });
+            
+    //         frm.refresh_field('sample_request_actual_time');
+    //     }else if(frm.doc.workflow_state == 'Review Marketing'){
+    //         //frappe.utils.now_datetime() - self.creation
+    //         let row = frm.add_child('sample_request_actual_time', {
+    //             from_time: frappe.datetime.now_datetime(),
+    //             to_time: frappe.datetime.now_datetime(),
+    //             state: "Review Marketing"
+    //         });
+            
+    //         frm.refresh_field('sample_request_actual_time');
+    //     }else if(frm.doc.workflow_state == 'Reviewed Customer'){
+    //         //frappe.utils.now_datetime() - self.creation
+    //         let row = frm.add_child('sample_request_actual_time', {
+    //             from_time: frappe.datetime.now_datetime(),
+    //             to_time: frappe.datetime.now_datetime(),
+    //             state: "Reviewed Customer"
+    //         });
+            
+    //         frm.refresh_field('sample_request_actual_time');
+    //     }
+    // }
 });
 frappe.ui.form.on('BOM', {
     is_approved: function(frm, cdt, cdn) {

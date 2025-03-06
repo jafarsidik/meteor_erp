@@ -21,7 +21,9 @@
   "default_uom",
   "notes",
   "section_break_iglu",
-  "bom"
+  "bom",
+  "actual_time_section",
+  "sample_request_actual_time"
  ],
  "fields": [
   {
@@ -137,12 +139,24 @@
    "in_list_view": 1,
    "label": "Sample Code",
    "options": "Item"
+  },
+  {
+   "fieldname": "actual_time_section",
+   "fieldtype": "Section Break",
+   "label": "Actual Time"
+  },
+  {
+   "fieldname": "sample_request_actual_time",
+   "fieldtype": "Table",
+   "label": "Sample Request Actual Time",
+   "options": "Sample Request Actual Time",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-03-05 14:20:47.011787",
+ "modified": "2025-03-06 12:31:07.062967",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Sample Request",
