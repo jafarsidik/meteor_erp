@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{project_request}-{sample_name}",
+ "autoname": "format:{project_request}-{sample_code}",
  "creation": "2025-01-15 07:07:05.231159",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -146,6 +146,7 @@
    "label": "Actual Time"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "sample_request_actual_time",
    "fieldtype": "Table",
    "label": "Sample Request Actual Time",
@@ -156,7 +157,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-03-06 12:31:07.062967",
+ "modified": "2025-03-11 16:40:19.078955",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Sample Request",
