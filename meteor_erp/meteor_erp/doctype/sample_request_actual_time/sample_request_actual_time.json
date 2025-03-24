@@ -6,35 +6,14 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "from_time",
-  "to_time",
-  "state",
+  "time",
   "column_break_ebyo",
-  "time_in_mins"
+  "state"
  ],
  "fields": [
   {
-   "fieldname": "from_time",
-   "fieldtype": "Datetime",
-   "in_list_view": 1,
-   "label": "From Time"
-  },
-  {
-   "fieldname": "to_time",
-   "fieldtype": "Datetime",
-   "in_list_view": 1,
-   "label": "To Time"
-  },
-  {
    "fieldname": "column_break_ebyo",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "time_in_mins",
-   "fieldtype": "Int",
-   "in_list_view": 1,
-   "label": "Time In Mins",
-   "read_only": 1
   },
   {
    "fieldname": "state",
@@ -42,12 +21,18 @@
    "in_list_view": 1,
    "label": "State",
    "read_only": 1
+  },
+  {
+   "fieldname": "time",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Time"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-03-06 11:04:44.555607",
+ "modified": "2025-03-12 10:37:51.808358",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Sample Request Actual Time",

@@ -3,21 +3,8 @@
 
 frappe.ui.form.on("Sample Request", {
  	refresh(frm) {
-        //frm.set_df_property('Marketi', 'read_only', 1);
-        // Jika pengguna memiliki role 'R&D Staff', aktifkan field
-        // if (frappe.user.has_role('R&D Staff')) {
-        //     alert("Test");
-        //    // frm.set_df_property('bom', 'read_only', 0);
-        //     frm.fields_dict['bom'].grid.get_field('is_approved').df.read_only = 1;
-        //     frm.fields_dict['bom'].grid.refresh(); 
-        // } 
-        // else {
-        //     // Selain itu, jadikan field read-only
-        //     frm.set_df_property('bom', 'read_only', 1);
-        //     frm.fields_dict['bom'].grid.get_field('is_approved').df.read_only = 1;
-        // }
-        //alert("Workflow State Changed: "+frm.doc.workflow_state);
-        frm.trigger('update_actual_time');
+       
+       // frm.trigger('update_actual_time');
         if (frappe.user.has_role('Marketing Staff','System Manager')) {
              frm.fields_dict['bom'].grid.get_field('is_approved').df.read_only = 0;
          }
@@ -33,11 +20,10 @@ frappe.ui.form.on("Sample Request", {
         })
    
     },
-    // workflow_state: function(frm) {
-    //     console.log("✅ Workflow State Changed: ", frm.doc.workflow_state);
-    //     frm.trigger('update_actual_time');
+    // timeline_refresh(frm){
+    //     alert(frm.doc.workflow_state)
     // },
-    update_actual_time: function(frm) {
+    timeline_refresh: function(frm) {
         if (!frm.doc.workflow_state) return;
 
         let state = frm.doc.workflow_state;
@@ -58,10 +44,8 @@ frappe.ui.form.on("Sample Request", {
 
         console.log(`Selisih waktu: ${differenceMinutes} menit`);
         let row = frm.add_child('sample_request_actual_time', {
-            from_time: frappe.datetime.now_datetime(),
-            to_time:frappe.datetime.now_datetime(),
-            state: state,
-            time_in_mins: differenceMinutes,
+            time:frappe.datetime.now_datetime(),
+            state: state
         });
 
         frm.refresh_field('sample_request_actual_time');

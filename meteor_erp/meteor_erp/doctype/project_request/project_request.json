@@ -13,6 +13,7 @@
   "company",
   "category_md",
   "category_tr",
+  "category_na",
   "column_break_aqcj",
   "priority",
   "project_type",
@@ -164,7 +165,13 @@
    "fieldname": "category_tr",
    "fieldtype": "Select",
    "label": "Category TR",
-   "options": "\nPowder\nLiquid\nJelly\nKapsul\nSoftgel"
+   "options": "\nKapsul\nPil\nSerbuk Oral\nCairan Obat Dalam\nKaplet"
+  },
+  {
+   "fieldname": "category_na",
+   "fieldtype": "Select",
+   "label": "Category NA",
+   "options": "\nCair\nCairan kental\nGel\nKrim\nPadat\nPadat (Stick)\nPadat Lipstick\nPadat Pensil\nPadat Sabun\nSetengah Padat\nSuspensi"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -175,7 +182,7 @@
    "link_fieldname": "project_request"
   }
  ],
- "modified": "2025-03-05 09:53:12.622435",
+ "modified": "2025-03-18 11:25:05.967315",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Project Request",
