@@ -1,0 +1,23 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Industry Type",
+  "industry": "Supplements",
+  "modified": "2024-11-25 18:15:50.405606",
+  "name": "Supplements"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Industry Type",
+  "industry": "Cosmetics",
+  "modified": "2024-11-11 10:05:15.414003",
+  "name": "Cosmetics"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Industry Type",
+  "industry": "Pangan",
+  "modified": "2024-11-25 18:16:08.127580",
+  "name": "Pangan"
+ }
+]

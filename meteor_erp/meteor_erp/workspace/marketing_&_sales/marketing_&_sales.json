@@ -5,7 +5,7 @@
    "label": "Customer Register"
   }
  ],
- "content": "[{\"id\":\"bmUxXEwvbS\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"qdNf1KQ3l6\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Sales</b></span>\",\"col\":12}},{\"id\":\"KC9Ei-N6m-\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Customer Register\",\"col\":12}},{\"id\":\"hsu3wC1BU3\",\"type\":\"card\",\"data\":{\"card_name\":\"Selling\",\"col\":3}},{\"id\":\"7fLzcjn1pu\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Item</b></span>\",\"col\":12}},{\"id\":\"RhlwWTP7o4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material\",\"col\":7}},{\"id\":\"7wGrFMM8EL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Packaging\",\"col\":7}},{\"id\":\"THGnYyajVg\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Products\",\"col\":7}}]",
+ "content": "[{\"id\":\"bmUxXEwvbS\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"qdNf1KQ3l6\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Sales</b></span>\",\"col\":12}},{\"id\":\"KC9Ei-N6m-\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Customer Register\",\"col\":12}},{\"id\":\"hsu3wC1BU3\",\"type\":\"card\",\"data\":{\"card_name\":\"Selling\",\"col\":3}},{\"id\":\"7fLzcjn1pu\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Item</b></span>\",\"col\":12}},{\"id\":\"RhlwWTP7o4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material\",\"col\":7}},{\"id\":\"bvCG-Vp5zW\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"BOM\",\"col\":3}},{\"id\":\"7wGrFMM8EL\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Packaging\",\"col\":7}},{\"id\":\"THGnYyajVg\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Products\",\"col\":7}}]",
  "creation": "2024-11-20 18:07:10.797930",
  "custom_blocks": [],
  "docstatus": 0,
@@ -158,7 +158,7 @@
    "type": "Link"
   }
  ],
- "modified": "2025-02-17 16:58:15.561895",
+ "modified": "2025-03-27 13:16:08.238410",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Marketing & Sales",
@@ -177,6 +177,14 @@
  ],
  "sequence_id": 39.0,
  "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "BOM",
+   "link_to": "BOM",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
   {
    "color": "Yellow",
    "doc_view": "List",

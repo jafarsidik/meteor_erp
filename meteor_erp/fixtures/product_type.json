@@ -1,0 +1,44 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Product Type",
+  "modified": "2024-11-25 21:40:44.467877",
+  "name": "Health Drink Maklon (MD)",
+  "product_type": null
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Product Type",
+  "modified": "2024-11-25 21:40:25.863677",
+  "name": "Herbal / Capsule Manufacturing (TR)",
+  "product_type": null
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Product Type",
+  "modified": "2025-01-13 17:27:17.084983",
+  "name": "Supplement",
+  "product_type": "Supplement"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Product Type",
+  "modified": "2025-01-13 17:27:32.539471",
+  "name": "Cosmetics",
+  "product_type": "Cosmetics"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Product Type",
+  "modified": "2025-01-13 17:26:50.123740",
+  "name": "Pangan",
+  "product_type": "Pangan"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Product Type",
+  "modified": "2024-11-25 21:40:58.775550",
+  "name": "Cosmetic Manufacturing (NA)",
+  "product_type": null
+ }
+]

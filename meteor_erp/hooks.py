@@ -243,8 +243,9 @@ app_license = "mit"
 # }
 fixtures = [
     # export all records from Table
-    #"Workspace",
+    "Workspace",
     "Item Group",
+    "Item",
     "Industry Type",
     #"Raw Material",
     #"Product Group",
