@@ -1,0 +1,44 @@
+[
+ {
+  "accounts": [],
+  "credit_limits": [],
+  "customer_group_name": "All Customer Groups",
+  "default_price_list": null,
+  "docstatus": 0,
+  "doctype": "Customer Group",
+  "is_group": 1,
+  "modified": "2024-11-11 10:05:14.787187",
+  "name": "All Customer Groups",
+  "old_parent": "",
+  "parent_customer_group": null,
+  "payment_terms": null
+ },
+ {
+  "accounts": [],
+  "credit_limits": [],
+  "customer_group_name": "Non PPN",
+  "default_price_list": null,
+  "docstatus": 0,
+  "doctype": "Customer Group",
+  "is_group": 0,
+  "modified": "2024-11-22 15:06:33.702722",
+  "name": "Non PPN",
+  "old_parent": "All Customer Groups",
+  "parent_customer_group": "All Customer Groups",
+  "payment_terms": null
+ },
+ {
+  "accounts": [],
+  "credit_limits": [],
+  "customer_group_name": "PPN",
+  "default_price_list": null,
+  "docstatus": 0,
+  "doctype": "Customer Group",
+  "is_group": 0,
+  "modified": "2024-12-09 11:38:57.011194",
+  "name": "PPN",
+  "old_parent": "All Customer Groups",
+  "parent_customer_group": "All Customer Groups",
+  "payment_terms": null
+ }
+]
