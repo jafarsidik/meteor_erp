@@ -257,6 +257,8 @@ fixtures = [
     "Provinsi",
     "Kota Kabupaten",
     "Module Profile",
+    "Customer",
+    "Supplier",
     # {"dt": "Role", "filters": [
     #     ["name", "in", [
     #         "Purchasing Manager",
