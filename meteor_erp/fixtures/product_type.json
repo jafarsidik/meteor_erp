@@ -2,16 +2,16 @@
  {
   "docstatus": 0,
   "doctype": "Product Type",
-  "modified": "2024-11-25 21:40:44.467877",
+  "modified": "2025-05-07 13:58:44.081127",
   "name": "Health Drink Maklon (MD)",
-  "product_type": null
+  "product_type": "Health Drink Maklon (MD)"
  },
  {
   "docstatus": 0,
   "doctype": "Product Type",
-  "modified": "2024-11-25 21:40:25.863677",
+  "modified": "2025-05-07 13:59:02.874850",
   "name": "Herbal / Capsule Manufacturing (TR)",
-  "product_type": null
+  "product_type": "Herbal / Capsule Manufacturing (TR)"
  },
  {
   "docstatus": 0,
@@ -37,8 +37,8 @@
  {
   "docstatus": 0,
   "doctype": "Product Type",
-  "modified": "2024-11-25 21:40:58.775550",
+  "modified": "2025-05-07 13:58:52.131724",
   "name": "Cosmetic Manufacturing (NA)",
-  "product_type": null
+  "product_type": "Cosmetic Manufacturing (NA)"
  }
 ]

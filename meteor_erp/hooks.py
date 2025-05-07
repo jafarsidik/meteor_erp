@@ -258,7 +258,7 @@ fixtures = [
     "Kota Kabupaten",
     "Module Profile",
     "Customer Group",
-    "Customer",
+    #"Customer",
     "Supplier Group",
     "Supplier",
     # {"dt": "Role", "filters": [
