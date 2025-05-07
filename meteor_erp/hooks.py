@@ -255,7 +255,8 @@ fixtures = [
     "Role",
     "Custom DocPerm",
     "Provinsi",
-    "Kota Kabupaten"
+    "Kota Kabupaten",
+    "Module Profile",
     # {"dt": "Role", "filters": [
     #     ["name", "in", [
     #         "Purchasing Manager",

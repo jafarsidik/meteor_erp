@@ -19927,7 +19927,7 @@
   "is_sales_item": 1,
   "is_stock_item": 1,
   "is_sub_contracted_item": 0,
-  "item_code": "Kopi isi 6",
+  "item_code": "123456",
   "item_defaults": [
    {
     "buying_cost_center": null,
@@ -19941,20 +19941,20 @@
     "deferred_revenue_account": null,
     "expense_account": null,
     "income_account": "Sales - IGH",
-    "parent": "Kopi isi 6",
+    "parent": "123456",
     "parentfield": "item_defaults",
     "parenttype": "Item",
     "selling_cost_center": null
    }
   ],
   "item_group": "Products",
-  "item_name": "Kopi isi 6",
+  "item_name": "Kopi Isi 6",
   "last_purchase_rate": 0.0,
   "lead_time_days": 0,
   "max_discount": 0.0,
   "min_order_qty": 0.0,
-  "modified": "2025-04-16 14:40:55.186942",
-  "name": "Kopi isi 6",
+  "modified": "2025-05-06 16:02:15.525676",
+  "name": "123456",
   "naming_series": "STO-ITEM-.YYYY.-",
   "no_of_months": 0,
   "no_of_months_exp": 0,
@@ -19978,14 +19978,14 @@
   "uoms": [
    {
     "conversion_factor": 1.0,
-    "parent": "Kopi isi 6",
+    "parent": "123456",
     "parentfield": "uoms",
     "parenttype": "Item",
     "uom": "PCS"
    },
    {
     "conversion_factor": 1.0,
-    "parent": "Kopi isi 6",
+    "parent": "123456",
     "parentfield": "uoms",
     "parenttype": "Item",
     "uom": "Sachet"
