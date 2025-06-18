@@ -1,0 +1,30 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Raw Material Group",
+  "modified": "2024-11-25 17:54:26.144540",
+  "name": "Supplement",
+  "raw_material_group": "Supplement"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Raw Material Group",
+  "modified": "2024-11-25 17:54:40.336385",
+  "name": "Other",
+  "raw_material_group": "Other"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Raw Material Group",
+  "modified": "2024-11-25 17:54:17.529325",
+  "name": "Pangan",
+  "raw_material_group": "Pangan"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Raw Material Group",
+  "modified": "2024-11-25 17:54:34.078967",
+  "name": "Cosmetics",
+  "raw_material_group": "Cosmetics"
+ }
+]

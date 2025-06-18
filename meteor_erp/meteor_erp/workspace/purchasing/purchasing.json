@@ -58,7 +58,7 @@
    "type": "Link"
   }
  ],
- "modified": "2025-02-24 17:44:00.839585",
+ "modified": "2025-05-07 15:24:05.709491",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Purchasing",
@@ -75,13 +75,10 @@
    "role": "Purchasing Manager"
   },
   {
-   "role": "Assistent COO"
-  },
-  {
-   "role": "COO"
-  },
-  {
    "role": "IT SUPPORT"
+  },
+  {
+   "role": "superadmin"
   }
  ],
  "sequence_id": 41.0,

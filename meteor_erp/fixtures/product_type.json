@@ -16,20 +16,6 @@
  {
   "docstatus": 0,
   "doctype": "Product Type",
-  "modified": "2025-01-13 17:27:17.084983",
-  "name": "Supplement",
-  "product_type": "Supplement"
- },
- {
-  "docstatus": 0,
-  "doctype": "Product Type",
-  "modified": "2025-01-13 17:27:32.539471",
-  "name": "Cosmetics",
-  "product_type": "Cosmetics"
- },
- {
-  "docstatus": 0,
-  "doctype": "Product Type",
   "modified": "2025-01-13 17:26:50.123740",
   "name": "Pangan",
   "product_type": "Pangan"
@@ -40,5 +26,19 @@
   "modified": "2025-05-07 13:58:52.131724",
   "name": "Cosmetic Manufacturing (NA)",
   "product_type": "Cosmetic Manufacturing (NA)"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Product Type",
+  "modified": "2025-01-13 17:27:17.084983",
+  "name": "Supplement",
+  "product_type": "Supplement"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Product Type",
+  "modified": "2025-01-13 17:27:32.539471",
+  "name": "Cosmetics",
+  "product_type": "Cosmetics"
  }
 ]

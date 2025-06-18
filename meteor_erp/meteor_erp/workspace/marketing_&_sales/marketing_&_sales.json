@@ -158,7 +158,7 @@
    "type": "Link"
   }
  ],
- "modified": "2025-03-27 13:16:08.238410",
+ "modified": "2025-05-07 15:24:51.923604",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Marketing & Sales",
@@ -173,6 +173,9 @@
   },
   {
    "role": "Marketing Executive"
+  },
+  {
+   "role": "superadmin"
   }
  ],
  "sequence_id": 39.0,

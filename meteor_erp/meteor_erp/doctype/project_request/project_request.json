@@ -8,25 +8,21 @@
  "field_order": [
   "project_name",
   "customer",
+  "status",
   "expected_start_date",
   "expected_end_date",
   "company",
-  "category_md",
-  "category_tr",
-  "category_na",
   "column_break_aqcj",
   "priority",
   "project_type",
   "sales_quotation",
   "sales_order",
   "sales_invoice",
-  "customer_po",
   "amended_from",
   "created_by",
   "notes",
   "sample_section",
-  "create_sample",
-  "list_data_sample"
+  "sample__request"
  ],
  "fields": [
   {
@@ -105,7 +101,6 @@
    "depends_on": "eval:doc.project_type==\"Paid\"",
    "fieldname": "sales_order",
    "fieldtype": "Link",
-   "hidden": 1,
    "label": "Sales Order",
    "options": "Sales Order"
   },
@@ -113,14 +108,12 @@
    "depends_on": "eval:doc.project_type==\"Paid\"",
    "fieldname": "sales_quotation",
    "fieldtype": "Data",
-   "hidden": 1,
    "label": "Sales Quotation"
   },
   {
    "depends_on": "eval:doc.project_type==\"Paid\"",
    "fieldname": "sales_invoice",
    "fieldtype": "Data",
-   "hidden": 1,
    "label": "Sales Invoice"
   },
   {
@@ -130,59 +123,32 @@
    "options": "User"
   },
   {
-   "allow_on_submit": 1,
    "fieldname": "notes",
    "fieldtype": "Text",
-   "ignore_user_permissions": 1,
    "label": "Notes"
   },
   {
-   "fieldname": "create_sample",
-   "fieldtype": "Button",
-   "hidden": 1,
-   "label": "Create Sample",
-   "print_hide": 1,
-   "report_hide": 1
-  },
-  {
-   "fieldname": "list_data_sample",
-   "fieldtype": "HTML",
-   "label": "List Data Sample"
-  },
-  {
-   "depends_on": "eval:doc.project_type==\"Paid\"",
-   "fieldname": "customer_po",
-   "fieldtype": "Data",
-   "label": "Customer PO"
-  },
-  {
-   "fieldname": "category_md",
+   "default": "Open",
+   "fieldname": "status",
    "fieldtype": "Select",
-   "label": "Category MD",
-   "options": "\nPowder\nLiquid\nJelly"
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Open\nCompleted\nPending\nCancelled",
+   "read_only": 1,
+   "reqd": 1
   },
   {
-   "fieldname": "category_tr",
-   "fieldtype": "Select",
-   "label": "Category TR",
-   "options": "\nKapsul\nPil\nSerbuk Oral\nCairan Obat Dalam\nKaplet"
-  },
-  {
-   "fieldname": "category_na",
-   "fieldtype": "Select",
-   "label": "Category NA",
-   "options": "\nCair\nCairan kental\nGel\nKrim\nPadat\nPadat (Stick)\nPadat Lipstick\nPadat Pensil\nPadat Sabun\nSetengah Padat\nSuspensi"
+   "fieldname": "sample__request",
+   "fieldtype": "Table",
+   "label": "Sample  Request",
+   "options": "Project Request Sample Child"
   }
  ],
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "links": [
-  {
-   "link_doctype": "Sample Request",
-   "link_fieldname": "project_request"
-  }
- ],
- "modified": "2025-03-18 11:25:05.967315",
+ "links": [],
+ "modified": "2025-06-18 12:44:59.943926",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Project Request",
@@ -202,6 +168,7 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

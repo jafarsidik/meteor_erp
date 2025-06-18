@@ -243,13 +243,15 @@ app_license = "mit"
 # }
 fixtures = [
     # export all records from Table
+    #Master Data
     "Workspace",
-    "Item Group",
-    "Item",
-    "Industry Type",
-    #"Raw Material",
-    #"Product Group",
+    "Workflow State",
+    "Workflow Action Master",
+    "Workflow",
+    "Raw Material Group",
+    "Packaging Group",
     "Product Category",
+    "Product Type",
     "Product Type",
     "Client Script",
     "Role",
@@ -258,9 +260,19 @@ fixtures = [
     "Kota Kabupaten",
     "Module Profile",
     "Customer Group",
-    #"Customer",
+    "Industry Type",
     "Supplier Group",
     "Supplier",
+    "Workstation Type",
+    "Workstation",
+    #Transaksi
+    "Item Group",
+    #"Item",
+    #"Customer",
+    #"Raw Material",
+    #"Product Group",
+    
+    
     # {"dt": "Role", "filters": [
     #     ["name", "in", [
     #         "Purchasing Manager",

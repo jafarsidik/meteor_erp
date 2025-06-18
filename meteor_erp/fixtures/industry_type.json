@@ -1,5 +1,6 @@
 [
  {
+  "company": null,
   "docstatus": 0,
   "doctype": "Industry Type",
   "industry": "Supplements",
@@ -7,6 +8,7 @@
   "name": "Supplements"
  },
  {
+  "company": null,
   "docstatus": 0,
   "doctype": "Industry Type",
   "industry": "Cosmetics",
@@ -14,6 +16,7 @@
   "name": "Cosmetics"
  },
  {
+  "company": null,
   "docstatus": 0,
   "doctype": "Industry Type",
   "industry": "Pangan",

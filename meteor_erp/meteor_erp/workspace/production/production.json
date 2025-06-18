@@ -93,7 +93,7 @@
    "type": "Link"
   }
  ],
- "modified": "2025-04-17 14:13:41.526591",
+ "modified": "2025-05-07 15:23:03.127337",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Production",
@@ -114,6 +114,9 @@
   },
   {
    "role": "Production Admin"
+  },
+  {
+   "role": "superadmin"
   }
  ],
  "sequence_id": 43.0,

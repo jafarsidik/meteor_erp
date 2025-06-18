@@ -21,7 +21,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-10 05:37:38.206303",
+ "modified": "2025-06-18 12:45:00.224541",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Product Type",
@@ -42,6 +42,7 @@
   }
  ],
  "quick_entry": 1,
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

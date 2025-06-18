@@ -81,7 +81,7 @@
    "type": "Link"
   }
  ],
- "modified": "2025-02-14 22:34:58.113866",
+ "modified": "2025-05-07 15:24:36.504759",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Research and Development",
@@ -92,13 +92,10 @@
  "quick_lists": [],
  "roles": [
   {
-   "role": "R&D Manager"
-  },
-  {
-   "role": "R&D Spv"
-  },
-  {
    "role": "R&D Staff"
+  },
+  {
+   "role": "superadmin"
   }
  ],
  "sequence_id": 40.0,

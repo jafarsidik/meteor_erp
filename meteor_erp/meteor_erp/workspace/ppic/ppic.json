@@ -112,7 +112,7 @@
    "type": "Link"
   }
  ],
- "modified": "2025-04-17 13:58:52.114570",
+ "modified": "2025-05-07 15:23:35.565431",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "PPIC",
@@ -133,6 +133,9 @@
   },
   {
    "role": "PPIC Executive"
+  },
+  {
+   "role": "superadmin"
   }
  ],
  "sequence_id": 42.0,

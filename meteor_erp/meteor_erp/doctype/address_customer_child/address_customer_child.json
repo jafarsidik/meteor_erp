@@ -7,9 +7,9 @@
  "engine": "InnoDB",
  "field_order": [
   "ditandai_sebagai",
-  "stateprovince",
-  "citytown",
   "address",
+  "citytown",
+  "stateprovince",
   "column_break_ixtu",
   "postal_code",
   "country"
@@ -24,18 +24,16 @@
   },
   {
    "fieldname": "citytown",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "in_list_view": 1,
    "label": "City/Town",
-   "options": "Kota Kabupaten",
    "reqd": 1
   },
   {
    "fieldname": "stateprovince",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "in_list_view": 1,
    "label": "State/Province",
-   "options": "Provinsi",
    "reqd": 1
   },
   {
@@ -68,12 +66,13 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-02-12 23:27:17.326257",
+ "modified": "2025-06-18 12:44:59.718305",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Address Customer Child",
  "owner": "Administrator",
  "permissions": [],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []
