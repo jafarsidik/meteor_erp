@@ -22,7 +22,7 @@
   "created_by",
   "notes",
   "sample_section",
-  "sample__request"
+  "list_data_sample"
  ],
  "fields": [
   {
@@ -138,17 +138,16 @@
    "reqd": 1
   },
   {
-   "fieldname": "sample__request",
-   "fieldtype": "Table",
-   "label": "Sample  Request",
-   "options": "Project Request Sample Child"
+   "fieldname": "list_data_sample",
+   "fieldtype": "HTML",
+   "label": "List Data Sample"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-06-20 16:50:31.207547",
+ "modified": "2025-06-20 17:06:29.814628",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Project Request",

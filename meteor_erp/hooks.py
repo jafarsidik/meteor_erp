@@ -243,35 +243,41 @@ app_license = "mit"
 # }
 fixtures = [
     # export all records from Table
+    
     #Master Data
-    "Workspace",
-    "Workflow State",
-    "Workflow Action Master",
-    "Workflow",
-    "Raw Material Group",
-    "Packaging Group",
-    "Product Category",
-    "Product Type",
-    "Product Type",
-    "Client Script",
-    "Role",
-    "Custom DocPerm",
-    "Provinsi",
-    "Kota Kabupaten",
-    "Module Profile",
-    "Customer Group",
-    "Industry Type",
-    "Supplier Group",
-    "Supplier",
-    "Workstation Type",
-    "Workstation",
+    # "Workspace",
+    # "Workflow State",
+    # "Workflow Action Master",
+    # "Workflow",
+    # "Raw Material Group",
+    # "Packaging Group",
+    # "Product Category",
+    # "Product Type",
+    # "Product Type",
+    # "Client Script",
+    # "Role",
+    # "Custom DocPerm",
+    # "Provinsi",
+    # "Kota Kabupaten",
+    # "Module Profile",
+    # "Customer Group",
+    # "Industry Type",
+    # "Supplier Group",
+    # "Supplier",
+    # "Workstation Type",
+    # "Workstation",
+    
     #Transaksi
-    "Item Group",
+    #"Item Group", hanya ini yang di pakai
     #"Item",
     #"Customer",
     #"Raw Material",
     #"Product Group",
     
+    #Fase Dev Migarte
+    #"Custom Field",
+    #"Property Setter",
+    #"Custom Script"
     
     # {"dt": "Role", "filters": [
     #     ["name", "in", [
