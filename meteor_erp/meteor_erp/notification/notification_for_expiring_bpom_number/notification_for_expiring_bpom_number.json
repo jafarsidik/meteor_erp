@@ -1,0 +1,30 @@
+{
+ "attach_print": 0,
+ "channel": "System Notification",
+ "creation": "2025-08-20 17:59:50.195778",
+ "date_changed": "custom_bpom_number_expiration_date",
+ "days_in_advance": 7,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Item",
+ "enabled": 1,
+ "event": "Days Before",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "Halo {{ doc.owner }},\r\n\r\nProduk berikut memiliki nomor registrasi BPOM yang akan segera kedaluwarsa:\r\n\r\n- Nama Produk: {{ doc.item_name }}\r\n- Nomor BPOM: {{ doc.custom_bpom_number }}\r\n- Tanggal Kedaluwarsa: {{ doc.custom_bpom_number_expiration_date }}\r\n\r\nMohon segera lakukan proses perpanjangan atau tindak lanjut yang diperlukan.\r\n\r\nTerima kasih,  \r\nTim QA/RA\r\n",
+ "message_type": "Markdown",
+ "modified": "2025-08-20 17:59:50.195778",
+ "modified_by": "Administrator",
+ "module": "Meteor ERP",
+ "name": "Notification for Expiring BPOM Number",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_document_field": "owner",
+   "receiver_by_role": "All"
+  }
+ ],
+ "send_system_notification": 0,
+ "send_to_all_assignees": 0,
+ "subject": "Expiring BPOM"
+}

@@ -1,0 +1,35 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2025-08-30 18:45:26.278535",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "",
+ "letterhead": null,
+ "modified": "2025-08-30 18:45:26.278535",
+ "modified_by": "Administrator",
+ "module": "Meteor ERP",
+ "name": "IGH Work Order Summary",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Work Order",
+ "report_name": "IGH Work Order Summary",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "Manufacturing User"
+  },
+  {
+   "role": "Stock User"
+  },
+  {
+   "role": "Manufacturing Manager"
+  }
+ ],
+ "timeout": 0
+}

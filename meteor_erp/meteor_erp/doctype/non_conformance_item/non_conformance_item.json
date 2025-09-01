@@ -1,0 +1,74 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-07-02 09:44:40.729770",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "reference_doctype",
+  "item_code",
+  "batch_no",
+  "column_break_xsio",
+  "supplier",
+  "quantity"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_break_xsio",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Code",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "default": "Item",
+   "fieldname": "reference_doctype",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Reference Doctype",
+   "link_filters": "[[\"DocType\",\"name\",\"=\",\"Item\"]]",
+   "options": "DocType"
+  },
+  {
+   "depends_on": "eval:doc.item_code",
+   "fieldname": "batch_no",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Batch No",
+   "options": "Batch"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Supplier",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "item_code.quality_inspection_template",
+   "fieldname": "quantity",
+   "fieldtype": "Int",
+   "label": "Quantity"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-07-02 10:39:27.465930",
+ "modified_by": "Administrator",
+ "module": "Meteor ERP",
+ "name": "Non Conformance Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

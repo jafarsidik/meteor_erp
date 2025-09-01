@@ -1,7 +1,7 @@
 {
  "charts": [],
  "content": "[{\"id\":\"0IlmKc-UUA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Warehouse management</span>\",\"col\":12}},{\"id\":\"cBp5Gb90lh\",\"type\":\"card\",\"data\":{\"card_name\":\"Inventory\",\"col\":4}},{\"id\":\"v28-4t8_wY\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Item</span>\",\"col\":12}},{\"id\":\"SRw9eFxxX-\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Raw Material\",\"col\":7}},{\"id\":\"Vpx66qI9n6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Product\",\"col\":7}},{\"id\":\"uAmFM7ozrG\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Packaging\",\"col\":7}},{\"id\":\"BmyhvhZ3X7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sample\",\"col\":7}},{\"id\":\"lSMccPJqTj\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Trial\",\"col\":7}}]",
- "creation": "2025-06-10 09:59:20.081935",
+ "creation": "2025-06-20 00:10:28.257885",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -17,7 +17,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Inventory",
-   "link_count": 5,
+   "link_count": 6,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -71,9 +71,19 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Delivery Note",
+   "link_count": 0,
+   "link_to": "Delivery Note",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2025-06-18 12:50:10.415308",
+ "modified": "2025-07-10 00:40:48.799209",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Warehouse management",

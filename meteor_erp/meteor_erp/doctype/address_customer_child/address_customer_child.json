@@ -24,16 +24,18 @@
   },
   {
    "fieldname": "citytown",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "in_list_view": 1,
    "label": "City/Town",
+   "options": "Kota Kabupaten",
    "reqd": 1
   },
   {
    "fieldname": "stateprovince",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "in_list_view": 1,
    "label": "State/Province",
+   "options": "Provinsi",
    "reqd": 1
   },
   {
@@ -66,7 +68,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-06-20 16:50:34.004928",
+ "modified": "2025-06-20 17:26:28.279538",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Address Customer Child",

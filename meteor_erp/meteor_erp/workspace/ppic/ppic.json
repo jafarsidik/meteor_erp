@@ -16,75 +16,6 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Manufacture",
-   "link_count": 6,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Work Order",
-   "link_count": 0,
-   "link_to": "Work Order",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Job Card",
-   "link_count": 0,
-   "link_to": "Job Card",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Production Plan",
-   "link_count": 0,
-   "link_to": "Production Plan",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Workstation",
-   "link_count": 0,
-   "link_to": "Workstation",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Operation",
-   "link_count": 0,
-   "link_to": "Operation",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Batch",
-   "link_count": 0,
-   "link_to": "Batch",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "Inventory",
    "link_count": 2,
    "link_type": "DocType",
@@ -110,9 +41,68 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Manufacture",
+   "link_count": 5,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Production Plan",
+   "link_count": 0,
+   "link_to": "Production Plan",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Work Order",
+   "link_count": 0,
+   "link_to": "Work Order",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Job Card",
+   "link_count": 0,
+   "link_to": "Job Card",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Operation",
+   "link_count": 0,
+   "link_to": "Operation",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Workstation",
+   "link_count": 0,
+   "link_to": "Workstation",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2025-05-07 15:23:35.565431",
+ "modified": "2025-07-10 16:08:48.395090",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "PPIC",
