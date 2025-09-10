@@ -215,6 +215,26 @@ def prepare_chart_data(pending, completed):
 
 def get_columns(filters):
 	columns = [
+		# --- Tambahan kolom Material Request ---
+		{
+			"label": _("Tanggal PR"),
+			"fieldname": "transaction_date_pr",
+			"fieldtype": "Date",
+			"width": 100,
+		},
+		{
+			"label": _("Nomor PR"),
+			"fieldname": "material_request",
+			"fieldtype": "Link",
+			"options": "Material Request",
+			"width": 150,
+		},
+		{
+			"label": _("Status PR"),
+			"fieldname": "mr_status",
+			"fieldtype": "Data",
+			"width": 100,
+		},
 		{"label": _("Tanggal PO"), "fieldname": "date", "fieldtype": "Date", "width": 90},
 		{"label": _("Expected Date PO"), "fieldname": "required_date", "fieldtype": "Date", "width": 90},
 		{
@@ -254,20 +274,7 @@ def get_columns(filters):
 
 	columns.extend(
 		[
-			# --- Tambahan kolom Material Request ---
-			{
-				"label": _("Nomor PR"),
-				"fieldname": "material_request",
-				"fieldtype": "Link",
-				"options": "Material Request",
-				"width": 150,
-			},
-			{
-				"label": _("Status PR"),
-				"fieldname": "mr_status",
-				"fieldtype": "Data",
-				"width": 100,
-			},
+			
 			# {
 			# 	"label": _("MR Item Code"),
 			# 	"fieldname": "mr_item_code",
@@ -275,14 +282,9 @@ def get_columns(filters):
 			# 	"options": "Item",
 			# 	"width": 100,
 			# },
-			{
-				"label": _("Tanggal PR"),
-				"fieldname": "transaction_date_pr",
-				"fieldtype": "Date",
-				"width": 100,
-			},
+			
    			{
-				"label": _("Tanggal PR"),
+				"label": _("MR Required By"),
 				"fieldname": "mr_required_date",
 				"fieldtype": "Date",
 				"width": 100,

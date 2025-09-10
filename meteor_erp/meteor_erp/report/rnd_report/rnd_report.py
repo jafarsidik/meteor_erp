@@ -1,7 +1,5 @@
 # Copyright (c) 2025, JF and contributors
 # For license information, please see license.txt
-# Copyright (c) 2025, JF and contributors
-# For license information, please see license.txt
 
 import frappe
 from frappe.utils import getdate
@@ -51,6 +49,7 @@ def execute(filters=None):
     for row in raw_data:
         project_id = ""
         customer_name = ""
+        latest_status = ""
 
         # Kalau ada project_request, ambil data project
         if row.project_request:
@@ -64,6 +63,17 @@ def execute(filters=None):
                 project_id = project.name
                 customer_name = project.customer
 
+        # Ambil status terakhir dari child table Sample Request Actual Time
+        latest_child = frappe.db.get_all(
+            "Sample Request Actual Time",
+            fields=["state", "time"],
+            filters={"parent": row.name},
+            order_by="time desc",
+            limit=1
+        )
+        if latest_child:
+            latest_status = latest_child[0].state
+
         data.append({
             "name": row.name,
             "project_request": row.project_request,
@@ -76,23 +86,21 @@ def execute(filters=None):
             "qty": row.qty,
             "excepted_start_date": row.excepted_start_date,
             "excepted_end_date": row.excepted_end_date,
-            "company_type": row.company_type
+            "company_type": row.company_type,
+            "status": latest_status
         })
 
     # Definisikan kolom
     columns = [
         {"label": "Name", "fieldname": "name", "fieldtype": "Data"},
-        {"label": "Project Request", "fieldname": "project_request", "fieldtype": "Data"},
         {"label": "Project ID", "fieldname": "project_id", "fieldtype": "Data"},
+        {"label": "Sample Code", "fieldname": "sample_code", "fieldtype": "Data"},
+        {"label": "Sample Group", "fieldname": "sample_group", "fieldtype": "Data"},
         {"label": "Customer Name", "fieldname": "customer_name", "fieldtype": "Data"},
-        {"label": "Simple Code", "fieldname": "sample_code", "fieldtype": "Data"},
-        {"label": "Simple Group", "fieldname": "sample_group", "fieldtype": "Data"},
-        {"label": "Simple Tipe", "fieldname": "sample_tipe", "fieldtype": "Data"},
-        {"label": "Default UOM", "fieldname": "default_uom", "fieldtype": "Data"},
-        {"label": "Qty", "fieldname": "qty", "fieldtype": "Data"},
-        {"label": "Excepted Start Date", "fieldname": "excepted_start_date", "fieldtype": "Date"},
-        {"label": "Excepted End Date", "fieldname": "excepted_end_date", "fieldtype": "Date"},
-        {"label": "Company Type", "fieldname": "company_type", "fieldtype": "Data"}
+        {"label": "Start Date", "fieldname": "excepted_start_date", "fieldtype": "Date"},
+        {"label": "End Date", "fieldname": "excepted_end_date", "fieldtype": "Date"},
+        {"label": "Company Type", "fieldname": "company_type", "fieldtype": "Data"},
+        {"label": "Status", "fieldname": "status", "fieldtype": "Data"},
     ]
 
     return columns, data

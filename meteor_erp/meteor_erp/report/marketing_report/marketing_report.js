@@ -1,7 +1,7 @@
 // Copyright (c) 2025, JF and contributors
 // For license information, please see license.txt
 
-frappe.query_reports["IGH Purchasing"] = {
+frappe.query_reports["Marketing Report"] = {
 	"filters": [
 		{
 			fieldname: "company",
@@ -20,7 +20,7 @@ frappe.query_reports["IGH Purchasing"] = {
 			reqd: 1,
 			default: frappe.datetime.add_months(frappe.datetime.get_today(), -1),
 			on_change: (report) => {
-				report.set_filter_value("name", []);
+				report.set_filter_value("sales_order", []);
 				report.refresh();
 			},
 		},
@@ -32,23 +32,16 @@ frappe.query_reports["IGH Purchasing"] = {
 			reqd: 1,
 			default: frappe.datetime.get_today(),
 			on_change: (report) => {
-				report.set_filter_value("name", []);
+				report.set_filter_value("sales_order", []);
 				report.refresh();
 			},
 		},
 		{
-			fieldname: "project",
-			label: __("Project"),
-			fieldtype: "Link",
-			width: "80",
-			options: "Project",
-		},
-		{
-			fieldname: "name",
-			label: __("Purchase Order"),
+			fieldname: "sales_order",
+			label: __("Sales Order"),
 			fieldtype: "MultiSelectList",
 			width: "80",
-			options: "Purchase Order",
+			options: "Sales Order",
 			get_data: function (txt) {
 				let filters = { docstatus: 1 };
 
@@ -56,21 +49,27 @@ frappe.query_reports["IGH Purchasing"] = {
 				const to_date = frappe.query_report.get_filter_value("to_date");
 				if (from_date && to_date) filters["transaction_date"] = ["between", [from_date, to_date]];
 
-				return frappe.db.get_link_options("Purchase Order", txt, filters);
+				return frappe.db.get_link_options("Sales Order", txt, filters);
 			},
+		},
+		{
+			fieldname: "warehouse",
+			label: __("Warehouse"),
+			fieldtype: "Link",
+			options: "Warehouse",
 		},
 		{
 			fieldname: "status",
 			label: __("Status"),
 			fieldtype: "MultiSelectList",
+			options: ["To Pay", "To Bill", "To Deliver", "To Deliver and Bill", "Completed", "Closed"],
 			width: "80",
-			options: ["To Pay", "To Bill", "To Receive", "To Receive and Bill", "Completed", "Closed"],
 			get_data: function (txt) {
 				let status = [
 					"To Pay",
 					"To Bill",
-					"To Receive",
-					"To Receive and Bill",
+					"To Deliver",
+					"To Deliver and Bill",
 					"Completed",
 					"Closed",
 				];
@@ -86,18 +85,22 @@ frappe.query_reports["IGH Purchasing"] = {
 			},
 		},
 		{
-			fieldname: "group_by_po",
-			label: __("Group by Purchase Order"),
+			fieldname: "group_by_so",
+			label: __("Group by Sales Order"),
 			fieldtype: "Check",
 			default: 0,
 		},
 	],
 	formatter: function (value, row, column, data, default_formatter) {
 		value = default_formatter(value, row, column, data);
-		let format_fields = ["received_qty", "billed_amount"];
+		let format_fields = ["delivered_qty", "billed_amount"];
 
 		if (in_list(format_fields, column.fieldname) && data && data[column.fieldname] > 0) {
-			value = "<span style='color:green'>" + value + "</span>";
+			value = "<span style='color:green;'>" + value + "</span>";
+		}
+
+		if (column.fieldname == "delay" && data && data[column.fieldname] > 0) {
+			value = "<span style='color:red;'>" + value + "</span>";
 		}
 		return value;
 	},
