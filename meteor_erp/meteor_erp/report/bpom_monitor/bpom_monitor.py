@@ -2,7 +2,7 @@
 # For license information, please see license.txt
 
 import frappe
-from frappe.utils import getdate
+from frappe.utils import getdate, nowdate, date_diff
 
 def execute(filters=None):
 	product_name = filters.get("product_name")
@@ -29,6 +29,27 @@ def execute(filters=None):
 		filters=conditions
 		#order_by="tanggal_pelaporan asc"
 	)
+	
+	today = getdate(nowdate())
+	data = []
+
+	for row in raw_data:
+		expiry = row.get("custom_bpom_number_expiration_date")
+		status = "OK"
+		if expiry:
+			expiry_date = getdate(expiry)
+			diff_days = date_diff(expiry_date, today)
+			diff_months = diff_days / 30  # Approx in months
+
+			if diff_months <= 3:
+				status = "Danger"
+			elif diff_months <= 6:
+				status = "Warning"
+			else:
+				status = "OK"
+
+		row["status"] = status
+		data.append(row)
 	 # Definisikan kolom
 	columns = [
 		{"label": "Product Name", "fieldname": "item_name", "fieldtype": "Data", "width": 300},
@@ -36,7 +57,7 @@ def execute(filters=None):
 		{"label": "Product Classification", "fieldname": "custom_product_group", "fieldtype": "Data", "width": 120},
 		{"label": "BPOM Registration Number", "fieldname": "custom_bpom_number", "fieldtype": "Data", "width":120},
 		{"label": "BPOM Expiry", "fieldname": "custom_bpom_number_expiration_date", "fieldtype": "Data", "width": 120},
+		{"label": "Status", "fieldname": "status", "fieldtype": "Data", "width": 120},
 		
 	]
-	data =  raw_data
 	return columns,data
