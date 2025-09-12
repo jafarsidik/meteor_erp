@@ -57,7 +57,9 @@ def execute(filters=None):
 		{"label": "Product Classification", "fieldname": "custom_product_group", "fieldtype": "Data", "width": 120},
 		{"label": "BPOM Registration Number", "fieldname": "custom_bpom_number", "fieldtype": "Data", "width":120},
 		{"label": "BPOM Expiry", "fieldname": "custom_bpom_number_expiration_date", "fieldtype": "Data", "width": 120},
+		
 		{"label": "Status", "fieldname": "status", "fieldtype": "Data", "width": 120},
+  		{"label": "Halal Registration Number", "fieldname": "custom_halal_registry_number", "fieldtype": "Data", "width": 120},
 		
 	]
 	return columns,data
