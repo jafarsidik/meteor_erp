@@ -31,6 +31,8 @@ frappe.query_reports["BPOM Monitor"] = {
 				color = "orange";
 			} else if (data.status === "Safe") {
 				color = "blue";
+			}else if(data.status === "OK"){
+				color = "green";
 			}
 			value = `<div style="background-color:${color}; color:white; font-weight:bold; text-align:center;">${value}</div>`;
 		}
