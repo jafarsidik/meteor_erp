@@ -38,21 +38,24 @@ def execute(filters=None):
 	)
 	 # Definisikan kolom
 	columns = [
-		{"label": "Name", "fieldname": "name", "fieldtype": "Data"},
+		{"label": "No", "fieldname": "name", "fieldtype": "Data"},
+  		{"label": "Category", "fieldname": "custom_category", "fieldtype": "Data"},
+    	{"label": "Item Code (Product Name)", "fieldname": "custom_item", "fieldtype": "Data"},
+     	{"label": "Batch No", "fieldname": "custom_batch_no", "fieldtype": "Data"},
+		{"label": "Supplier", "fieldname": "custom_supplier", "fieldtype": "Data"},
+		{"label": "Qty", "fieldname": "custom_qty", "fieldtype": "Data"},
+		{"label": "UOM", "fieldname": "custom_uom", "fieldtype": "Data"},
+		{"label": "PO Number", "fieldname": "custom_po_number", "fieldtype": "Data"},
+		{"label": "SO Number", "fieldname": "custom_so_number", "fieldtype": "Data"},
+		{"label": "Corrective Action", "fieldname": "corrective_action", "fieldtype": "Data"},
+		{"label": "Preventive Action", "fieldname": "preventive_action", "fieldtype": "Data"},
+  
 		{"label": "Subject", "fieldname": "subject", "fieldtype": "Data"},
 		{"label": "Procedure", "fieldname": "procedure", "fieldtype": "Data"},
 		{"label": "Status", "fieldname": "status", "fieldtype": "Data"},
-		{"label": "Category", "fieldname": "custom_category", "fieldtype": "Data"},
-		{"label": "Item", "fieldname": "custom_item", "fieldtype": "Data"},
-		{"label": "Qty", "fieldname": "custom_qty", "fieldtype": "Data"},
-		{"label": "UOM", "fieldname": "custom_uom", "fieldtype": "Data"},
-		{"label": "Supplier", "fieldname": "custom_supplier", "fieldtype": "Data"},
-		{"label": "Batch No", "fieldname": "custom_batch_no", "fieldtype": "Data"},
-		{"label": "PO Number", "fieldname": "custom_po_number", "fieldtype": "Data"},
-		{"label": "SO Number", "fieldname": "custom_so_number", "fieldtype": "Data"},
-		{"label": "Detail", "fieldname": "details", "fieldtype": "Data"},
-		{"label": "Corrective Action", "fieldname": "corrective_action", "fieldtype": "Data"},
-		{"label": "Preventive Action", "fieldname": "preventive_action", "fieldtype": "Data"}
+		
+		
+		
 	]
 	data =  raw_data
 	return columns,data
