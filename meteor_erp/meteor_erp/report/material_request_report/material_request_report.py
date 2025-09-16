@@ -10,18 +10,19 @@ def execute(filters=None):
 
 def get_columns():
     return [
-        {"label": _("Material Request"), "fieldname": "name", "fieldtype": "Link", "options": "Material Request", "width": 150},
-        {"label": _("Date"), "fieldname": "transaction_date", "fieldtype": "Date", "width": 100},
+         {"label": _("Tanggal "), "fieldname": "transaction_date", "fieldtype": "Date", "width": 100},
+        {"label": _("Material Request ID"), "fieldname": "name", "fieldtype": "Link", "options": "Material Request", "width": 150},
         {"label": _("Request Type"), "fieldname": "material_request_type", "fieldtype": "Data", "width": 140},
-        {"label": _("Status"), "fieldname": "status", "fieldtype": "Data", "width": 100},
+        {"label": _("Material Request Status"), "fieldname": "status", "fieldtype": "Data", "width": 100},
         {"label": _("Company"), "fieldname": "company", "fieldtype": "Link", "options": "Company", "width": 150},
         {"label": _("Item Code"), "fieldname": "item_code", "fieldtype": "Link", "options": "Item", "width": 140},
         {"label": _("Item Name"), "fieldname": "item_name", "fieldtype": "Data", "width": 200},
-        {"label": _("Qty"), "fieldname": "qty", "fieldtype": "Float", "width": 90},
+        {"label": _("Material Qty"), "fieldname": "qty", "fieldtype": "Float", "width": 90},
+	 {"label": _("Material Qty in Stock"), "fieldname": "actual_qty", "fieldtype": "Float", "width": 120},  # 👈 tambahan
         {"label": _("Stock UOM"), "fieldname": "stock_uom", "fieldtype": "Link", "options": "UOM", "width": 90},
         {"label": _("Warehouse"), "fieldname": "warehouse", "fieldtype": "Link", "options": "Warehouse", "width": 150},
-        {"label": _("Project"), "fieldname": "project", "fieldtype": "Link", "options": "Project", "width": 140},
-        {"label": _("Created By"), "fieldname": "owner", "fieldtype": "Data", "width": 150},
+        #{"label": _("Project"), "fieldname": "project", "fieldtype": "Link", "options": "Project", "width": 140},
+       # {"label": _("Created By"), "fieldname": "owner", "fieldtype": "Data", "width": 150},
     ]
 
 
@@ -41,7 +42,6 @@ def get_conditions(filters):
 
     return " AND ".join(conditions)
 
-
 def get_data(filters):
     conditions = get_conditions(filters)
     if conditions:
@@ -57,6 +57,12 @@ def get_data(filters):
             mri.item_code,
             mri.item_name,
             mri.qty,
+            COALESCE(
+                (SELECT SUM(bin.actual_qty)
+                 FROM `tabBin` bin
+                 WHERE bin.item_code = mri.item_code
+                   AND bin.warehouse = mri.warehouse), 0
+            ) AS actual_qty,
             mri.stock_uom,
             mri.warehouse,
             mri.project,

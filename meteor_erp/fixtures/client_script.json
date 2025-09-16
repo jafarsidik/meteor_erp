@@ -1,0 +1,211 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Item",
+  "enabled": 1,
+  "modified": "2025-03-19 15:42:27.117748",
+  "module": "Meteor ERP",
+  "name": "Item",
+  "script": "frappe.ui.form.on('Item', {\n\trefresh(frm) {\n\t     if(frm.doc.item_group == 'Products'){\n\t        frm.set_df_property('custom_product_group', 'reqd', 1)\n\t        frm.set_df_property('custom_bpom_number', 'reqd', 1)\n\t        frm.set_df_property('custom_bpom_number_expiration_date', 'reqd', 1)\n\t        frm.set_df_property('custom_halal_registry_number', 'reqd', 1)\n\t        frm.set_df_property('custom_bpom_certificate', 'reqd', 1)\n\t        frm.set_df_property('custom_halal_certificate', 'reqd', 1)\n\t        //frm.toggle_display(['custom_raw_material_group'], frm.doc.item_group === 'Raw Material');\n\t\t    //frm.toggle_display(['custom_product_group','custom_product_category'], frm.doc.item_group === 'Products');    \n\t    }\n\t    \n\t    if (frappe.user.has_role([\"R&D Staff\",\"Purchasing Staff\", \"System Manager\"])) {\n            frm.set_df_property('custom_kode_internal', 'hidden', 0); // Tampilkan field\n            frm.fields_dict['supplier_items'].grid.update_docfield_property('custom_nama_bahan_baku', 'hidden', 0);\n            frm.fields_dict['supplier_items'].grid.update_docfield_property('custom_nama_bahan_baku', 'in_list_view', 0);\n        } else {\n            //frm.set_df_property(\"custom_nama_bahan_baku\", \"hidden \", 1, frm.doc, \"custom_nama_bahan_baku\", table_row_name)\n            frm.set_df_property('custom_kode_internal', 'hidden', 1); // Sembunyikan field\n            frm.fields_dict['supplier_items'].grid.update_docfield_property('custom_nama_bahan_baku', 'hidden', 1);\n            frm.fields_dict['supplier_items'].grid.update_docfield_property('custom_nama_bahan_baku', 'in_list_view', 1);\n            //frm.set_df_property('custom_nama_bahan_baku', 'hidden', 1); // Sembunyikan field\n        }\n        \n        \n\t\t\n\t\t\n\t\t// your code here\n// \t\tfrm.toggle_display(['custom_raw_material_group'], frm.doc.item_group === 'Raw Material');\n// \t\tfrm.toggle_display(['custom_product_group','custom_product_category'], frm.doc.item_group === 'Products');\n// \t\tfrm.set_query('custom_product_category', () => {\n//             return {\n//                 filters: {\n//                     product_group: frm.doc.custom_product_group\n//                 }\n//             }\n//         })\n\t},\n\titem_group(frm){\n\t    if(frm.doc.item_group == 'Products'){\n\t        frm.set_df_property('custom_product_group', 'reqd', 1)\n\t        frm.set_df_property('custom_bpom_number', 'reqd', 1)\n\t        frm.set_df_property('custom_bpom_number_expiration_date', 'reqd', 1)\n\t        frm.set_df_property('custom_halal_registry_number', 'reqd', 1)\n\t        frm.set_df_property('custom_bpom_certificate', 'reqd', 1)\n\t        frm.set_df_property('custom_halal_certificate', 'reqd', 1)\n\t        //frm.toggle_display(['custom_raw_material_group'], frm.doc.item_group === 'Raw Material');\n\t\t    //frm.toggle_display(['custom_product_group','custom_product_category'], frm.doc.item_group === 'Products');    \n\t    }\n\t    /*if(frm.doc.item_group == \"Sample\"){\n\t        frappe.call({\n                method: \"frappe.client.get_list\",\n                args: {\n                    doctype: \"Item\",\n                    filters: [\n                        [\"item_code\", \"like\", \"F-%\"],\n                        [\"item_group\", \"like\", \"Sample\"],\n                    ],\n                    fields: [\"item_code\",\"item_group\"],\n                    limit_page_length: 1,\n                    order_by: \"creation desc\",\n                },\n                callback: function (r) {\n                    let last_code = r.message.length ? r.message[0].item_code : \"F-00000\";\n                    let next_number = String(parseInt(last_code.split(\"-\")[1]) + 1).padStart(5, \"0\");\n                    frm.set_value(\"item_code\", `F-${next_number}`);\n                },\n            });\n        \n\t    }*/\n\t}\n})\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Batch",
+  "enabled": 0,
+  "modified": "2025-02-12 21:29:05.164777",
+  "module": "Meteor ERP",
+  "name": "Batch Management",
+  "script": "frappe.ui.form.on('Batch', {\n\trefresh(frm) {\n\t\t// your code here\n// \t\tfrm.set_query(\"item\", (doc) => {\n//          return {\n//              filters: {\n//                 //  \"item_group\": \"Products\", // whatever state is selected\n//                  \"is_stock_item\":1,\n//                  \"has_batch_no\":1\n//              }\n//          }\n//      });\n\t}\n})",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Purchase Order",
+  "enabled": 1,
+  "modified": "2025-06-20 20:26:35.796504",
+  "module": "Meteor ERP",
+  "name": "Purchase Order",
+  "script": "\r\n\r\nfrappe.ui.form.on(\"Purchase Order\", {\r\n    supplier(frm){\r\n        frappe.db.get_doc('Supplier', frm.doc.supplier)\r\n        .then(doc => {\r\n            frm.clear_table(\"custom_address_supplier\");\r\n            frm.set_value('custom_email_supplier',doc.custom_email_supplier)\r\n            frm.set_value('custom_phone_supplier',doc.custom_phone_number)\r\n            doc.custom_address_supplier.forEach(function(vals,index,arr){\r\n                let row = frm.add_child('custom_address_supplier', {\r\n                    address: vals.address,\r\n                    citytown: vals.citytown,\r\n                    stateprovince: vals.stateprovince,\r\n                    postal_code: vals.postal_code,\r\n                    country: vals.country,\r\n                });\r\n            })\r\n            \r\n            frm.refresh_field('custom_address_supplier');\r\n        })\r\n       \r\n    },\r\n    refresh(frm){\r\n         frappe.db.get_doc('Warehouse', frm.doc.set_warehouse)\r\n        .then(doc => {\r\n               \r\n            frm.set_value('custom_address_ship_to',doc.address_line_1)\r\n            frm.set_value('custom_city_ship_to',doc.city)\r\n            frm.set_value('custom_state_ship_to',doc.state)\r\n            frm.set_value('custom_zipcode_shp_to',doc.custom_zip_code)\r\n            frm.set_value('custom_mobile_no_ship_to',doc.mobile_no)\r\n        })\r\n    },\r\n    set_warehouse(frm){\r\n         frappe.db.get_doc('Warehouse', frm.doc.set_warehouse)\r\n        .then(doc => {\r\n         \r\n            frm.set_value('custom_address_ship_to',doc.address_line_1)\r\n            frm.set_value('custom_city_ship_to',doc.city)\r\n            frm.set_value('custom_state_ship_to',doc.state)\r\n            frm.set_value('custom_zipcode_shp_to',doc.custom_zip_code)\r\n            frm.set_value('custom_mobile_no_ship_to',doc.mobile_no)\r\n        })\r\n    }\r\n    /*\r\n    custom_is_billed(frm){\r\n        if(frm.doc.custom_is_billed == 1 && frm.doc.custom_is_received==1){\r\n            frm.set_value('status',\"Completed\")    \r\n        }\r\n        \r\n    },\r\n    custom_is_received(frm){\r\n        \r\n        if(frm.doc.custom_is_billed == 1 && frm.doc.custom_is_received==1){\r\n            frm.set_value('status',\"Completed\")    \r\n        }\r\n        \r\n    }\r\n    */\r\n});\r\n\r\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Sales Order",
+  "enabled": 1,
+  "modified": "2025-02-12 20:34:54.546753",
+  "module": "Meteor ERP",
+  "name": "Sales Order",
+  "script": "\nfrappe.ui.form.on('Sales Order', {\n \trefresh(frm) {\n \t    // Menghapus tombol \"Purchase Order\" dan \"Quotation\" dari bagian \"Get Items From\"\n        frm.remove_custom_button(\"Purchase Order\", 'Get Items From');\n        frm.remove_custom_button(\"Quotation\", 'Get Items From');\n        frm.remove_custom_button(\"Update Items\");\n        cur_frm.page.remove_inner_button(__('Purchase Order'),  __('Get Items From'));\n        cur_frm.page.remove_inner_button(__('Quotation'),  __('Get Items From'));\n    },\n    customer(frm){\n        frappe.db.get_doc('Customer', frm.doc.customer)\n        .then(doc => {\n            frm.clear_table(\"custom_address_customer\");\n            frm.set_value('custom_email_customer',doc.custom_email)\n            frm.set_value('custom_phone_number_customer',doc.custom_phone_number)\n            doc.custom_address.forEach(function(vals,index,arr){\n                let row = frm.add_child('custom_address_customer', {\n                    address: vals.address,\n                    citytown: vals.citytown,\n                    stateprovince: vals.stateprovince,\n                    postal_code: vals.postal_code,\n                    country: vals.country,\n                });\n            })\n            \n            frm.refresh_field('custom_address_customer');\n        })\n       \n    }\n// \tsetup: function(frm) {\n//         frm.fields_dict['items'].grid.get_field('item_code').get_query = function(doc, cdt, cdn) {\n//             return {\n//                 filters: {\n//                     item_group: 'Products'  // Filter berdasarkan grup produk\n//                 }\n//             };\n//         };\n//     \t\n        \n//     }\n})\n\n\n\n\nfrappe.ui.form.on('Sales Order Item', {\n\titem_code(frm, cdt, cdn) {\n        let row = frappe.get_doc(cdt, cdn);\n        \n    }\n\t\n})",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Customer",
+  "enabled": 1,
+  "modified": "2025-03-10 16:02:20.020407",
+  "module": "Meteor ERP",
+  "name": "Customer",
+  "script": "frappe.ui.form.on('Customer', {\n   \n\trefresh(frm) {\n\t\t// your code here\n\t\tfrm.remove_custom_button(\"Accounts Receivable\",'View');\n        frm.remove_custom_button('Accounting Ledger','View');\n        frm.remove_custom_button('Pricing Rule','Create');\n        frm.remove_custom_button('Get Customer Group Details','Actions');\n        \n        //filter pada child table address\n        frm.set_query(\"citytown\", \"custom_address\", function (doc, cdt, cdn) {\n            let local = locals[cdt][cdn];\n          return {\n            \"filters\": {\n              \"provinsi\": local.stateprovince\n            },\n          };\n        });\n        if (!frm.doc.custom_created_by) {\n            frm.set_value('custom_created_by', frappe.session.user);\n        }\n        // Menjadikan field Created By read-only setelah diisi\n        frm.set_df_property('custom_created_by', 'read_only', 1);\n\t}\n})\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Customer",
+  "enabled": 1,
+  "modified": "2024-12-12 09:18:27.523472",
+  "module": "Meteor ERP",
+  "name": "Customer List",
+  "script": "\r\nfrappe.listview_settings['Customer'] = {\r\n\trefresh: function(listview) {\r\n\t   \t$(\"use.like-icon\").hide();\r\n\t}\r\n};",
+  "view": "List"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Sales Order",
+  "enabled": 0,
+  "modified": "2025-09-16 22:43:05.917757",
+  "module": "Meteor ERP",
+  "name": "Sales Order List",
+  "script": "frappe.listview_settings['Sales Order'] = {\n\trefresh: function(listview) {\n\t   \t$(\"use.like-icon\").hide();\n\t}\n};",
+  "view": "List"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Supplier",
+  "enabled": 1,
+  "modified": "2024-12-12 11:13:23.538935",
+  "module": "Meteor ERP",
+  "name": "Supplier List",
+  "script": "\r\nfrappe.listview_settings['Supplier'] = {\r\n\trefresh: function(listview) {\r\n\t   \t$(\"use.like-icon\").hide();\r\n\t}\r\n};",
+  "view": "List"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Supplier",
+  "enabled": 1,
+  "modified": "2025-02-12 23:40:16.413043",
+  "module": "Meteor ERP",
+  "name": "Supplier",
+  "script": "frappe.ui.form.on('Supplier', {\r\n    refresh(frm) {\r\n        // Menghapus tombol-tombol tertentu dari form\r\n        frm.remove_custom_button(\"Accounting Ledger\", 'View');\r\n        frm.remove_custom_button(\"Accounts Payable\", 'View');\r\n        frm.remove_custom_button(\"Bank Account\", 'Create');\r\n        frm.remove_custom_button(\"Pricing Rule\", 'Create');\r\n        frm.remove_custom_button(\"Get Supplier Group Details\", 'Actions');\r\n        frm.remove_custom_button(\"Link with Customer\", 'Actions');\r\n\r\n        // Memicu fungsi custom untuk menampilkan tabel item\r\n        frm.trigger(\"custom_list_item_supplier_table\");\r\n        \r\n        //filter pada child table address\r\n        frm.set_query(\"citytown\", \"custom_address_supplier\", function (doc, cdt, cdn) {\r\n            let local = locals[cdt][cdn];\r\n          return {\r\n            \"filters\": {\r\n              \"provinsi\": local.stateprovince\r\n            },\r\n          };\r\n        });\r\n    },\r\n\r\n    async custom_list_item_supplier_table(frm) {\r\n        let html = '';\r\n        html += `<table class='table table-bordered'>\r\n            <thead>\r\n                <tr>\r\n                    <th>Item Code / Name</th>\r\n                    <th>Group Type</th>\r\n                    <th>Rate</th>\r\n                </tr>\r\n            </thead>\r\n            <tbody>`;\r\n\r\n        try {\r\n            // Mengambil data item dari database berdasarkan supplier di child table\r\n            const items = await frappe.db.get_list('Item', {\r\n                filters: [\r\n                        [\"Item Supplier\", \"supplier\", \"=\", frm.doc.name] // Filter berdasarkan supplier di child table\r\n                    ],\r\n                fields: ['name','item_group','valuation_rate']\r\n            });\r\n\r\n            // Membuat baris tabel untuk setiap item\r\n            items.forEach(item => {\r\n                html += `<tr>\r\n                    <td>${item.name}</td>\r\n                    <td>${item.item_group}</td>\r\n                    <td>${item.valuation_rate}</td>\r\n                </tr>`;\r\n            });\r\n\r\n            html += `</tbody></table>`;\r\n\r\n            // Menetapkan HTML ke properti custom field\r\n            frm.set_df_property(\"custom_list_item_supplier\", \"options\", html);\r\n        } catch (error) {\r\n            console.error(\"Error fetching items:\", error);\r\n            frappe.msgprint(\"Gagal mengambil data item. Silakan coba lagi.\");\r\n        }\r\n    }\r\n});",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Purchase Request",
+  "enabled": 1,
+  "modified": "2024-12-13 00:35:26.468560",
+  "module": "Meteor ERP",
+  "name": "Purchase Request List",
+  "script": "frappe.listview_settings['Purchase Request'] = {\r\n\trefresh: function(listview) {\r\n\t   \t$(\"use.like-icon\").hide();\r\n\t}\r\n};",
+  "view": "List"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Purchase Order",
+  "enabled": 1,
+  "modified": "2024-12-13 00:36:14.026555",
+  "module": "Meteor ERP",
+  "name": "Purchase Order List",
+  "script": "frappe.listview_settings['Purchase Order'] = {\n\trefresh: function(listview) {\n\t   \t$(\"use.like-icon\").hide();\n\t}\n};",
+  "view": "List"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Project Request",
+  "enabled": 1,
+  "modified": "2025-01-09 16:23:14.283888",
+  "module": null,
+  "name": "Project Request",
+  "script": "frappe.ui.form.on('Project Request', {\n    onload: function(frm) {\n        // Ganti breadcrumb\n        frappe.breadcrumbs.add('Research and Development', 'Project Request');\n    }\n});",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Material Request",
+  "enabled": 1,
+  "modified": "2025-03-10 16:13:33.341018",
+  "module": "Meteor ERP",
+  "name": "Material Request",
+  "script": "frappe.ui.form.on('Material Request', {\n\trefresh(frm) {\n\t\t// your code here\n\t\t//frm.remove_custom_button(\"Bill Of Materials\",'Get Item From');\n\t\tif (!frm.doc.created_by) {\n            frm.set_value('custom_created_by', frappe.session.user);\n        }\n        // Menjadikan field Created By read-only setelah diisi\n        frm.set_df_property('custom_created_by', 'read_only', 1);\n\t},\n\tmaterial_request_type(frm){\n\t    if (frm.doc.material_request_type == 'Purchase') {\n            frm.set_value('naming_series', 'MAT-Purchase-.YYYY.-.#####');\n        } \n        else if(frm.doc.material_request_type == 'Material Transfer'){\n            frm.set_value('naming_series', 'MAT-Material Transfer-.YYYY.-.#####');\n        }\n        else if(frm.doc.material_request_type == 'Material Issue'){\n            frm.set_value('naming_series', 'MAT-Material Issue-.YYYY.-.#####');\n        }\n        else if(frm.doc.material_request_type == 'Manufacture'){\n            frm.set_value('naming_series', 'MAT-Material Manufacture-.YYYY.-.#####');\n        }\n        else if(frm.doc.material_request_type == 'Customer Provided'){\n            frm.set_value('naming_series', 'MAT-Customer Provided-.YYYY.-.#####');\n        }\n\t}\n})",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "BOM",
+  "enabled": 1,
+  "modified": "2025-01-30 10:31:33.224450",
+  "module": "Meteor ERP",
+  "name": "BOM",
+  "script": "frappe.ui.form.on('BOM', {\n\trefresh(frm) {\n\t\t// your code here\n\t\tfrm.remove_custom_button(\"Browse BOM\");\n\t\tfrm.set_value('custom_total_raw_material',frm.doc.raw_material_cost)\n\t\tfrm.set_df_property('fg_based_operating_cost', 'hidden', 1)\n\t},\n\traw_material_cost(frm){\n\t    frm.set_value('custom_total_raw_material',frm.doc.raw_material_cost)\n\t},\n\twith_operations(frm){\n\t\tfrm.set_df_property('fg_based_operating_cost', 'hidden', 1)\n\t}\n})",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Work Order",
+  "enabled": 1,
+  "modified": "2025-03-05 09:16:27.473941",
+  "module": "Meteor ERP",
+  "name": "Work Order",
+  "script": "frappe.ui.form.on('Work Order', {\n\trefresh(frm) {\n\t    \n\t\t// your code here\n\t\t//alert(frm.doc.total_raw_material_issued)\n\t\tfrm.remove_custom_button(\"Create Job Card\");\n\t\tlet is_allowed = frappe.user_roles.includes('PPIC Staff');\n\t\tif(is_allowed){\n\t\t  \tfrm.remove_custom_button(\"Finish\");  \n\t\t}\n\t\tif (!frm.is_new()) {\n\t\t    //let consumed_qty = 0;\n            //let percentage = 0;  // Gunakan variabel tunggal, bukan array\n            //let total_items = frm.doc.required_items ? frm.doc.required_items.length : 0;\n        \n            //if (total_items > 0) {\n            //    frm.doc.required_items.forEach(function(data) {\n            //        consumed_qty += data.consumed_qty || 0;\n            //    });\n    \n            //    percentage = frm.doc.produced_qty ===0 ? 0 :  (frm.doc.produced_qty / frm.doc.qty) * 100;\n        //    }\n            \n            let pending_complete =\n\t\t\t\tfrm.doc.material_transferred_for_manufacturing -\n\t\t\t\tfrm.doc.produced_qty -\n\t\t\t\tfrm.doc.process_loss_qty;\n\t\t\tlet percentage = ((frm.doc.produced_qty / frm.doc.qty) *100) ? ((frm.doc.produced_qty / frm.doc.qty) * 100) : 0\n\t\t\tlet good = ((frm.doc.produced_qty / frm.doc.qty) *100) ? ((frm.doc.produced_qty / frm.doc.qty) * 100) : 0\n\t\t\tlet hold = ((pending_complete / frm.doc.qty) * 100) ? ((pending_complete / frm.doc.qty) * 100) : 0\n\t\t\tlet reject = ((frm.doc.process_loss_qty  / frm.doc.qty) * 100) ? ((frm.doc.process_loss_qty  / frm.doc.qty) * 100) : 0\n            frm.set_value('custom_yield_percentage', percentage);\n            frm.set_value('custom_yield_good', good);\n            frm.set_value('custom_yield_hold', hold);\n            frm.set_value('custom_yield_reject', reject);\n        //  alert(frm.doc.process_loss_qty);\n\t\t}\n\t},\n\tbom_no(frm){\n\t    frappe.db.get_doc('BOM', frm.doc.bom_no)\n        .then(doc => {\n          //  alert(doc.custom_upload)\n          //  frm.clear_table(\"custom_address_customer\");\n            frm.set_value('custom_batch_record',doc.custom_upload)\n        })\n\t}\n})\n\nfrappe.ui.form.on('Work Order Item', {\n\tform_render(frm,cdt,cdn) {\n\t\t// your code here\n\t\tvar child = locals[cdt][cdn];\n\t\tcustom_yield_percentage_percent = frm.doc.produced_qty ===0 ? 0 : (frm.doc.produced_qty/child.consumed_qty)\n\t\tcustom_yield_percentage_good = frm.doc.produced_qty ===0 ? 0 :  (frm.doc.produced_qty/child.transferred_qty)\n\t\t//frm.set_value('custom_yield_percentage',custom_yield_percentage_val)\n\t\tfrappe.model.set_value(cdt,cdn,\"custom_yield_percentage\",custom_yield_percentage_percent);\n\t\tfrappe.model.set_value(cdt,cdn,\"custom_yield_good\",custom_yield_percentage_good);\n\t}\n})",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Stock Entry",
+  "enabled": 1,
+  "modified": "2025-02-05 07:16:23.044129",
+  "module": "Meteor ERP",
+  "name": "Stock Entry",
+  "script": "frappe.ui.form.on('Stock Entry', {\n\trefresh(frm) {\n\t\t// your code here\n\t\tif (!frm.custom_buttons) frm.custom_buttons = {};\n        \n        frm.add_custom_button(__(\"Purchase Order\"), function() {\n            erpnext.utils.map_current_doc({\n                method: \"meteor_erp.api.make_stock_entry\",\n                source_doctype: \"Purchase Order\",\n                target: frm,\n                setters: {\n                    supplier: frm.doc.supplier || undefined\n                },\n                get_query_filters: {\n                    docstatus: 1, // Hanya Purchase Order yang sudah dikonfirmasi\n                    status: [\"not in\", [\"Completed\", \"Cancelled\"]]\n                }\n            });\n        }, __(\"Get Items From\"));\n\t}\n})",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Batch",
+  "enabled": 1,
+  "modified": "2025-02-12 21:32:26.120565",
+  "module": "Meteor ERP",
+  "name": "Batch",
+  "script": "\r\nfrappe.listview_settings['Batch'] = {\r\n    hide_name_column: true, // hide the last column which shows the `name`\r\n    hide_name_filter: true, // hide the default filter field for the name column\r\n\trefresh: function(listview) {\r\n\t   \t$(\"use.like-icon\").hide();\r\n\t}\r\n};",
+  "view": "List"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Production Plan",
+  "enabled": 1,
+  "modified": "2025-03-05 15:33:37.926030",
+  "module": "Meteor ERP",
+  "name": "Production Plan",
+  "script": "frappe.ui.form.on('Production Plan', {\n\trefresh(frm) {\n\t\t// your code here\n\t},\n\tcustom_get_sample_request(frm){\n\t    //frappe.db.get_doc('Sample Request', null, { workflow_state: 'Draft' })\n\t    frappe.db.get_list('Sample Request', {\n             fields: ['sample_name','name'],\n             filters: {\n             workflow_state: 'Draft'\n             }\n            })\n            .then(doc => {\n                if (!doc) {\n                    frappe.throw(__('No Approved Sample Request found.'));\n                    return;\n                }\n\n                // if (!doc.bom || !Array.isArray(doc.bom) || doc.bom.length === 0) {\n                //     frappe.throw(__('The selected Sample Request has no BOM items.'));\n                //     return;\n                // }\n                 frm.set_value('po_items','');\n                doc.forEach((head_item) => {\n                    frappe.db.get_doc('Sample Request', head_item.name)\n                      .then(doc_t => {\n                          frm.refresh_field('po_items');\n                            doc_t.bom.forEach((item) => {\n                                \n                                 let row = frm.add_child('po_items', {\n                                     item_code: head_item.sample_name,\n                                     bom_no: item.bom\n                                 });\n                             });\n                             frm.refresh_field('po_items');\n                      })\n                });\n\n                \n              //  console.log(doc);\n            })\n            //.catch(err => {\n            //    console.error(\"Error fetching Sample Request:\", err);\n            //    frappe.throw(__('An error occurred while fetching the Sample Request. Please check the console for details.'));\n            //});\n\t}\n})",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Non Conformance",
+  "enabled": 1,
+  "modified": "2025-07-10 07:04:56.331759",
+  "module": "Meteor ERP",
+  "name": "Non Conformance",
+  "script": "frappe.ui.form.on('Non Conformance', {\n    onload: function(frm) {\n        frm.set_query(\"custom_supplier\", function(doc) {\n            if (doc.item_code) {\n                return {\n                    query: \"erpnext.controllers.queries.supplier_query\",\n                    filters: {\n                        item_code: doc.item_code\n                    }\n                };\n            }\n        });\n    },\n\trefresh(frm) {\n\t\t// your code here\n\t},\n\tcustom_item(frm){\n\t   \n\t    frm.set_query(\"custom_batch_no\", (doc) => {\n         return {\n             filters: {\n                \"item\": doc.custom_item // whatever state is selected\n             }\n         }\n        });\n    //     frm.set_query(\"custom_supplier\", (doc) => {\n    //       return {\n    //         query: 'erpnext.controllers.queries.supplier_query',\n             \n    //       filters: {\n    //          item_code: doc.custom_supplier // whatever state is selected\n    //       }\n    //  }\n    //  });\n        //get Stock\n        \n        \n\t}\n})",
+  "view": "Form"
+ }
+]

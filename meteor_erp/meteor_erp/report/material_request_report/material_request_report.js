@@ -1,7 +1,7 @@
 // Copyright (c) 2025, JF and contributors
 // For license information, please see license.txt
 
-frappe.query_reports["IGH Material Request"] = {
+frappe.query_reports["Material Request Report"] = {
 	"filters": [
 		{
 		"fieldname": "status",

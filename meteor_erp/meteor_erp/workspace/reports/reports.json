@@ -953,9 +953,9 @@
   {
    "hidden": 0,
    "is_query_report": 1,
-   "label": "IGH Purchase Order Analysis",
+   "label": "Material Request Report",
    "link_count": 0,
-   "link_to": "IGH Purchase Order Analysis",
+   "link_to": "Material Request Report",
    "link_type": "Report",
    "onboard": 0,
    "type": "Link"
@@ -963,9 +963,9 @@
   {
    "hidden": 0,
    "is_query_report": 1,
-   "label": "Delivery Note Trends",
+   "label": "Receipt Order of Raw Material and Packaging",
    "link_count": 0,
-   "link_to": "Delivery Note Trends",
+   "link_to": "Receipt Order of Raw Material and Packaging",
    "link_type": "Report",
    "onboard": 0,
    "type": "Link"
@@ -973,15 +973,15 @@
   {
    "hidden": 0,
    "is_query_report": 1,
-   "label": "IGH Material Request",
+   "label": "Delivery Notes Report",
    "link_count": 0,
-   "link_to": "IGH Material Request",
+   "link_to": "Delivery Notes Report",
    "link_type": "Report",
    "onboard": 0,
    "type": "Link"
   }
  ],
- "modified": "2025-09-16 22:11:16.771727",
+ "modified": "2025-09-16 22:39:56.819286",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Reports",
