@@ -1,7 +1,7 @@
 // Copyright (c) 2025, JF and contributors
 // For license information, please see license.txt
 
-frappe.query_reports["IGH Batch-Wise Balance History"] = {
+frappe.query_reports["Stock Raw Material Report"] = {
 	"filters": [
 		{
 			fieldname: "company",

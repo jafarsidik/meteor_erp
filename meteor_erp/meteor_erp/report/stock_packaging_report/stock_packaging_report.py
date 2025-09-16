@@ -71,15 +71,15 @@ def get_columns(filters):
     """return columns based on filters"""
 
     columns = [
-        _("Item") + ":Link/Item:100",
+        _("Item Code") + ":Link/Item:100",
         _("Item Name") + "::150",
-        _("Description") + "::150",
+        #_("Description") + "::150",
         _("Warehouse") + ":Link/Warehouse:100",
         _("Batch") + ":Link/Batch:100",
-        _("Opening Qty") + ":Float:90",
-        _("In Qty") + ":Float:80",
-        _("Out Qty") + ":Float:80",
-        _("Balance Qty") + ":Float:90",
+        #_("Opening Qty") + ":Float:90",
+        #_("In Qty") + ":Float:80",
+       # _("Out Qty") + ":Float:80",
+        _("Sisa Qty") + ":Float:90",
         _("UOM") + "::90",
         # 🔽 KOLUMN BARU
         _("Exp") + "::100",
@@ -108,8 +108,10 @@ def get_stock_ledger_entries_for_batch_no(filters):
     posting_datetime = get_datetime(add_to_date(filters["to_date"], days=1))
 
     sle = frappe.qb.DocType("Stock Ledger Entry")
+    item = frappe.qb.DocType("Item")
     query = (
         frappe.qb.from_(sle)
+        .inner_join(item).on(item.name == sle.item_code)
         .select(
             sle.item_code,
             sle.warehouse,
@@ -122,6 +124,7 @@ def get_stock_ledger_entries_for_batch_no(filters):
             & (sle.is_cancelled == 0)
             & (sle.batch_no != "")
             & (sle.posting_datetime < posting_datetime)
+            & (item.item_group == "Packaging")  # ✅ filter benar
         )
         .groupby(sle.voucher_no, sle.batch_no, sle.item_code, sle.warehouse)
         .orderby(sle.item_code, sle.warehouse)
@@ -150,11 +153,12 @@ def get_stock_ledger_entries_for_batch_bundle(filters):
     batch_package = frappe.qb.DocType("Serial and Batch Entry")
 
     to_date = get_datetime(filters.to_date + " 23:59:59")
-
+    item = frappe.qb.DocType("Item")
     query = (
         frappe.qb.from_(sle)
         .inner_join(batch_package)
         .on(batch_package.parent == sle.serial_and_batch_bundle)
+        .inner_join(item).on(item.name == sle.item_code)
         .select(
             sle.item_code,
             sle.warehouse,
@@ -167,6 +171,7 @@ def get_stock_ledger_entries_for_batch_bundle(filters):
             & (sle.is_cancelled == 0)
             & (sle.has_batch_no == 1)
             & (sle.posting_datetime <= to_date)
+            & (item.item_group == "Packaging")  # ✅ filter benar
         )
         .groupby(sle.voucher_no, batch_package.batch_no, batch_package.warehouse)
         .orderby(sle.item_code, sle.warehouse)
