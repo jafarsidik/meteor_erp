@@ -255,6 +255,7 @@ fixtures = [
     # "Product Type",
     # "Product Type",
     "Client Script",
+    "Server Script",
     # "Role",
     # "Custom DocPerm",
     # "Provinsi",
