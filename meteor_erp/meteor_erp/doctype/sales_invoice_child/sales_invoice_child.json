@@ -10,6 +10,7 @@
   "sales_invoice_number",
   "sales_invoice_status",
   "sales_invoice_id",
+  "sales_invoice_amount",
   "erpnext_column",
   "sales_invoice_erp"
  ],
@@ -54,13 +55,18 @@
    "in_list_view": 1,
    "label": "Sales Invoice ERP",
    "options": "Sales Invoice"
+  },
+  {
+   "fieldname": "sales_invoice_amount",
+   "fieldtype": "Currency",
+   "label": "Sales Invoice Amount"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-09-26 11:15:46.578076",
+ "modified": "2025-09-26 14:16:58.137654",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Sales Invoice Child",
