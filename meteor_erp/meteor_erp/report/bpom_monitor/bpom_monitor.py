@@ -53,7 +53,7 @@ def execute(filters=None):
 	 # Definisikan kolom
 	columns = [
 		{"label": "Product Name", "fieldname": "item_name", "fieldtype": "Data", "width": 300},
-		{"label": "Registration Category", "fieldname": "custom_product_group", "fieldtype": "Data", "width": 120},
+		#{"label": "Registration Category", "fieldname": "custom_product_group", "fieldtype": "Data", "width": 120},
 		{"label": "Product Classification", "fieldname": "custom_product_group", "fieldtype": "Data", "width": 120},
 		{"label": "BPOM Registration Number", "fieldname": "custom_bpom_number", "fieldtype": "Data", "width":120},
 		{"label": "BPOM Expiry", "fieldname": "custom_bpom_number_expiration_date", "fieldtype": "Data", "width": 120},

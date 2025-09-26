@@ -43,25 +43,19 @@ def execute(filters=None):
                 for batch in sorted(iwb_map[item][wh]):
                     qty_dict = iwb_map[item][wh][batch]
                     if qty_dict.opening_qty or qty_dict.in_qty or qty_dict.out_qty or qty_dict.bal_qty:
-                        data.append(
-                            [
-                                item,
-                                item_map[item]["item_name"],
-                                item_map[item]["description"],
-                                wh,
-                                batch,
-                                flt(qty_dict.opening_qty, float_precision),
-                                flt(qty_dict.in_qty, float_precision),
-                                flt(qty_dict.out_qty, float_precision),
-                                flt(qty_dict.bal_qty, float_precision),
-                                item_map[item]["stock_uom"],
-                                # 🔽 FIELD TAMBAHAN DARI ITEM
-                                item_map[item]["custom_bpom_number_expiration_date"],  # Exp
-                                item_map[item]["custom_bpom_number"],  # BPOM TR
-                                item_map[item]["custom_halal_registry_number"],  # BPOM MD
-                                item_map[item]["custom_is_halal"],  # Halal/Non Halal
-                                item_map[item]["custom_is_allergen"],  # Allergen/Non Allergen
-                            ]
+                        data.append({
+                                "item_code": item,
+                                "item_name": item_map[item]["item_name"],
+                                "warehouse": wh,
+                                "batch_no": batch,
+                                "bal_qty": flt(qty_dict.bal_qty, float_precision),
+                                "stock_uom": item_map[item]["stock_uom"],
+                                "custom_bpom_number_expiration_date": item_map[item]["custom_bpom_number_expiration_date"],
+                                "custom_bpom_number": item_map[item]["custom_bpom_number"],
+                                "custom_halal_registry_number": item_map[item]["custom_halal_registry_number"],
+                                "custom_is_halal": "Halal" if item_map[item]["custom_is_halal"] else "Non Halal",
+                                "custom_is_allergen": "Allergen" if item_map[item]["custom_is_allergen"] else "Non Allergen",
+                            }
                         )
 
     return columns, data
@@ -71,22 +65,18 @@ def get_columns(filters):
     """return columns based on filters"""
 
     columns = [
-        _("Item Code") + ":Link/Item:100",
-        _("Item Name") + "::150",
-        #_("Description") + "::150",
-        _("Warehouse") + ":Link/Warehouse:100",
-        _("Batch") + ":Link/Batch:100",
-        #_("Opening Qty") + ":Float:90",
-        #_("In Qty") + ":Float:80",
-       # _("Out Qty") + ":Float:80",
-        _("Sisa Qty") + ":Float:90",
-        _("UOM") + "::90",
-        # 🔽 KOLUMN BARU
-        _("Exp") + "::100",
-        _("BPOM TR") + "::120",
-        _("BPOM MD") + "::120",
-        _("Halal / Non Halal") + "::120",
-        _("Allergen / Non Allergen") + "::140",
+        {"label": _("Item Code"), "fieldname": "item_code", "fieldtype": "Link", "options": "Item", "width": 100},
+        {"label": _("Item Name"), "fieldname": "item_name", "fieldtype": "Data", "width": 150},
+        {"label": _("Warehouse"), "fieldname": "warehouse", "fieldtype": "Link", "options": "Warehouse", "width": 100},
+        {"label": _("Batch"), "fieldname": "batch_no", "fieldtype": "Link", "options": "Batch", "width": 100},
+        {"label": _("Sisa Qty"), "fieldname": "bal_qty", "fieldtype": "Float", "width": 90},
+        {"label": _("UOM"), "fieldname": "stock_uom", "fieldtype": "Data", "width": 90},
+        # 🔽 FIELD TAMBAHAN
+        {"label": _("BPOM Expiry"), "fieldname": "custom_bpom_number_expiration_date", "fieldtype": "Data", "width": 120},
+        {"label": _("BPOM TR"), "fieldname": "custom_bpom_number", "fieldtype": "Data", "width": 120},
+        {"label": _("Halal Registry Number"), "fieldname": "custom_halal_registry_number", "fieldtype": "Data", "width": 120},
+        {"label": _("Halal / Non Halal"), "fieldname": "custom_is_halal", "fieldtype": "Data", "width": 120},
+        {"label": _("Allergen / Non Allergen"), "fieldname": "custom_is_allergen", "fieldtype": "Data", "width": 140},
     ]
 
     return columns

@@ -3,7 +3,7 @@
 
 import frappe
 from frappe import _
-from frappe.utils import add_to_date, cint, flt, get_datetime, get_table_name, getdate
+from frappe.utils import add_to_date, cint, flt, get_datetime, getdate
 from frappe.utils.deprecations import deprecated
 from pypika import functions as fn
 from erpnext.stock.doctype.warehouse.warehouse import apply_warehouse_filter
@@ -32,8 +32,8 @@ def execute(filters=None):
 
     float_precision = cint(frappe.db.get_default("float_precision")) or 3
 
-    columns = get_columns(filters)  # <-- kolom sudah ditambah field baru
-    item_map = get_item_details(filters)  # <-- fungsi ini juga sudah ditambah field baru
+    columns = get_columns(filters)
+    item_map = get_item_details(filters)
     iwb_map = get_item_warehouse_batch_map(filters, float_precision)
 
     data = []
@@ -43,26 +43,22 @@ def execute(filters=None):
                 for batch in sorted(iwb_map[item][wh]):
                     qty_dict = iwb_map[item][wh][batch]
                     if qty_dict.opening_qty or qty_dict.in_qty or qty_dict.out_qty or qty_dict.bal_qty:
-                        data.append(
-                            [
-                                item,
-                                item_map[item]["item_name"],
-                                item_map[item]["description"],
-                                wh,
-                                batch,
-                                flt(qty_dict.opening_qty, float_precision),
-                                flt(qty_dict.in_qty, float_precision),
-                                flt(qty_dict.out_qty, float_precision),
-                                flt(qty_dict.bal_qty, float_precision),
-                                item_map[item]["stock_uom"],
-                                # 🔽 FIELD TAMBAHAN DARI ITEM
-                                item_map[item]["custom_bpom_number_expiration_date"],  # Exp
-                                item_map[item]["custom_bpom_number"],  # BPOM TR
-                                item_map[item]["custom_halal_registry_number"],  # BPOM MD
-                                item_map[item]["custom_is_halal"],  # Halal/Non Halal
-                                item_map[item]["custom_is_allergen"],  # Allergen/Non Allergen
-                            ]
-                        )
+                        data.append({
+                            "item_code": item,
+                            "item_name": item_map[item]["item_name"],
+                            "warehouse": wh,
+                            "batch_no": batch,
+                            "opening_qty": flt(qty_dict.opening_qty, float_precision),
+                            "in_qty": flt(qty_dict.in_qty, float_precision),
+                            "out_qty": flt(qty_dict.out_qty, float_precision),
+                            "bal_qty": flt(qty_dict.bal_qty, float_precision),
+                            "stock_uom": item_map[item]["stock_uom"],
+                            "custom_bpom_number_expiration_date": item_map[item]["custom_bpom_number_expiration_date"],
+                            "custom_bpom_number": item_map[item]["custom_bpom_number"],
+                            "custom_halal_registry_number": item_map[item]["custom_halal_registry_number"],
+                            "custom_is_halal": "Halal" if item_map[item].get("custom_is_halal") else "Non Halal",
+                            "custom_is_allergen": "Allergen" if item_map[item].get("custom_is_allergen") else "Non Allergen",
+                        })
 
     return columns, data
 
@@ -71,24 +67,22 @@ def get_columns(filters):
     """return columns based on filters"""
 
     columns = [
-        _("Item Code") + ":Link/Item:100",
-        _("Item Name") + "::150",
-        #_("Description") + "::150",
-        _("Warehouse") + ":Link/Warehouse:100",
-        _("Batch") + ":Link/Batch:100",
-        #_("Opening Qty") + ":Float:90",
-        #_("In Qty") + ":Float:80",
-       # _("Out Qty") + ":Float:80",
-        _("Sisa Qty") + ":Float:90",
-        _("UOM") + "::90",
-        # 🔽 KOLUMN BARU
-        _("Exp") + "::100",
-        _("BPOM TR") + "::120",
-        _("BPOM MD") + "::120",
-        _("Halal / Non Halal") + "::120",
-        _("Allergen / Non Allergen") + "::140",
+        {"label": _("Item Code"), "fieldname": "item_code", "fieldtype": "Link", "options": "Item", "width": 120},
+        {"label": _("Item Name"), "fieldname": "item_name", "fieldtype": "Data", "width": 180},
+        {"label": _("Warehouse"), "fieldname": "warehouse", "fieldtype": "Link", "options": "Warehouse", "width": 140},
+        {"label": _("Batch"), "fieldname": "batch_no", "fieldtype": "Link", "options": "Batch", "width": 120},
+        #{"label": _("Opening Qty"), "fieldname": "opening_qty", "fieldtype": "Float", "width": 100},
+        #{"label": _("In Qty"), "fieldname": "in_qty", "fieldtype": "Float", "width": 100},
+        #{"label": _("Out Qty"), "fieldname": "out_qty", "fieldtype": "Float", "width": 100},
+        {"label": _("Sisa Qty"), "fieldname": "bal_qty", "fieldtype": "Float", "width": 100},
+        {"label": _("UOM"), "fieldname": "stock_uom", "fieldtype": "Data", "width": 80},
+        # 🔽 FIELD TAMBAHAN
+        {"label": _("BPOM Expiry"), "fieldname": "custom_bpom_number_expiration_date", "fieldtype": "Data", "width": 120},
+        {"label": _("BPOM TR"), "fieldname": "custom_bpom_number", "fieldtype": "Data", "width": 120},
+        {"label": _("Halal Registry Number"), "fieldname": "custom_halal_registry_number", "fieldtype": "Data", "width": 160},
+        {"label": _("Halal / Non Halal"), "fieldname": "custom_is_halal", "fieldtype": "Data", "width": 140},
+        {"label": _("Allergen / Non Allergen"), "fieldname": "custom_is_allergen", "fieldtype": "Data", "width": 160},
     ]
-
     return columns
 
 
@@ -124,7 +118,7 @@ def get_stock_ledger_entries_for_batch_no(filters):
             & (sle.is_cancelled == 0)
             & (sle.batch_no != "")
             & (sle.posting_datetime < posting_datetime)
-            & (item.item_group == "Packaging")  # ✅ filter benar
+            & (item.item_group == "Packaging")
         )
         .groupby(sle.voucher_no, sle.batch_no, sle.item_code, sle.warehouse)
         .orderby(sle.item_code, sle.warehouse)
@@ -137,7 +131,6 @@ def get_stock_ledger_entries_for_batch_no(filters):
             filters={"warehouse_type": filters.warehouse_type, "is_group": 0},
             pluck="name",
         )
-
         if warehouses:
             query = query.where(sle.warehouse.isin(warehouses))
 
@@ -151,13 +144,13 @@ def get_stock_ledger_entries_for_batch_no(filters):
 def get_stock_ledger_entries_for_batch_bundle(filters):
     sle = frappe.qb.DocType("Stock Ledger Entry")
     batch_package = frappe.qb.DocType("Serial and Batch Entry")
+    item = frappe.qb.DocType("Item")
 
     to_date = get_datetime(filters.to_date + " 23:59:59")
-    item = frappe.qb.DocType("Item")
+
     query = (
         frappe.qb.from_(sle)
-        .inner_join(batch_package)
-        .on(batch_package.parent == sle.serial_and_batch_bundle)
+        .inner_join(batch_package).on(batch_package.parent == sle.serial_and_batch_bundle)
         .inner_join(item).on(item.name == sle.item_code)
         .select(
             sle.item_code,
@@ -171,7 +164,7 @@ def get_stock_ledger_entries_for_batch_bundle(filters):
             & (sle.is_cancelled == 0)
             & (sle.has_batch_no == 1)
             & (sle.posting_datetime <= to_date)
-            & (item.item_group == "Packaging")  # ✅ filter benar
+            & (item.item_group == "Packaging")
         )
         .groupby(sle.voucher_no, batch_package.batch_no, batch_package.warehouse)
         .orderby(sle.item_code, sle.warehouse)
@@ -184,7 +177,6 @@ def get_stock_ledger_entries_for_batch_bundle(filters):
             filters={"warehouse_type": filters.warehouse_type, "is_group": 0},
             pluck="name",
         )
-
         if warehouses:
             query = query.where(sle.warehouse.isin(warehouses))
 
@@ -210,19 +202,16 @@ def get_item_warehouse_batch_map(filters, float_precision):
             d.batch_no, frappe._dict({"opening_qty": 0.0, "in_qty": 0.0, "out_qty": 0.0, "bal_qty": 0.0})
         )
         qty_dict = iwb_map[d.item_code][d.warehouse][d.batch_no]
-        if d.posting_date < from_date:
-            qty_dict.opening_qty = flt(qty_dict.opening_qty, float_precision) + flt(
-                d.actual_qty, float_precision
-            )
-        elif d.posting_date >= from_date and d.posting_date <= to_date:
-            if flt(d.actual_qty) > 0:
-                qty_dict.in_qty = flt(qty_dict.in_qty, float_precision) + flt(d.actual_qty, float_precision)
-            else:
-                qty_dict.out_qty = flt(qty_dict.out_qty, float_precision) + abs(
-                    flt(d.actual_qty, float_precision)
-                )
 
-        qty_dict.bal_qty = flt(qty_dict.bal_qty, float_precision) + flt(d.actual_qty, float_precision)
+        if d.posting_date < from_date:
+            qty_dict.opening_qty += flt(d.actual_qty, float_precision)
+        elif from_date <= d.posting_date <= to_date:
+            if flt(d.actual_qty) > 0:
+                qty_dict.in_qty += flt(d.actual_qty, float_precision)
+            else:
+                qty_dict.out_qty += abs(flt(d.actual_qty, float_precision))
+
+        qty_dict.bal_qty += flt(d.actual_qty, float_precision)
 
     return iwb_map
 
@@ -234,7 +223,6 @@ def get_item_details(filters):
         "item_name",
         "description",
         "stock_uom",
-        # 🔽 FIELD BARU DARI ITEM
         "custom_bpom_number_expiration_date",
         "custom_bpom_number",
         "custom_halal_registry_number",

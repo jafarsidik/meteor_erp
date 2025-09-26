@@ -1,0 +1,73 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-26 11:13:24.297196",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "accurate_column",
+  "transaction_date",
+  "sales_invoice_number",
+  "sales_invoice_status",
+  "sales_invoice_id",
+  "erpnext_column",
+  "sales_invoice_erp"
+ ],
+ "fields": [
+  {
+   "fieldname": "accurate_column",
+   "fieldtype": "Column Break",
+   "label": "Accurate"
+  },
+  {
+   "fieldname": "transaction_date",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Transaction Date"
+  },
+  {
+   "fieldname": "sales_invoice_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Sales Invoice Number"
+  },
+  {
+   "fieldname": "sales_invoice_status",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Sales Invoice Status"
+  },
+  {
+   "fieldname": "sales_invoice_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Sales Invoice ID"
+  },
+  {
+   "fieldname": "erpnext_column",
+   "fieldtype": "Column Break",
+   "label": "ERPNext"
+  },
+  {
+   "fieldname": "sales_invoice_erp",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Sales Invoice ERP",
+   "options": "Sales Invoice"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-09-26 11:15:46.578076",
+ "modified_by": "Administrator",
+ "module": "Meteor ERP",
+ "name": "Sales Invoice Child",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

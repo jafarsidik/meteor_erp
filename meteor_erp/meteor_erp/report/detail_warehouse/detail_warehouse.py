@@ -164,7 +164,7 @@ def get_columns(filters: StockBalanceFilter) -> list[dict]:
         {"label": _("Name Warehouse"), "fieldname": "warehouse_name", "fieldtype": "Data", "width": 200},
         {"label": _("Detail Warehouse"), "fieldname": "detail_warehouse", "fieldtype": "Data", "width": 150},
         {"label": _("Lokasi"), "fieldname": "lokasi", "fieldtype": "Data", "width": 150},
-        {"label": _("Stock Balance"), "fieldname": "stock_balance", "fieldtype": "Float", "width": 150},
+        #{"label": _("Stock Balance"), "fieldname": "stock_balance", "fieldtype": "Float", "width": 150},
         {"label": _("List Packaging"), "fieldname": "list_packaging", "fieldtype": "Int", "width": 150},
         {"label": _("Stock Packaging"), "fieldname": "stock_packaging", "fieldtype": "Float", "width": 150},
     ]

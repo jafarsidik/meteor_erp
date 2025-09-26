@@ -68,6 +68,7 @@ def get_data(conditions, filters):
 			soi.delivery_date as delivery_date,
 			so.name as sales_order,
 			so.total_taxes_and_charges,
+			so.grand_total,
 			so.status, so.customer,so.custom_customer_code, soi.item_code,
 			DATEDIFF(CURRENT_DATE, soi.delivery_date) as delay_days,
 			IF(so.status in ('Completed','To Bill'), 0, (SELECT delay_days)) as delay,
@@ -192,6 +193,7 @@ def prepare_data(data, so_elapsed_time, filters):
 					"delivered_qty_amount",
 					"billed_amount",
 					"pending_amount",
+					"grand_total",
 				]
 				for field in fields:
 					so_row[field] = flt(row[field]) + flt(so_row[field])
@@ -306,6 +308,14 @@ def get_columns(filters):
 			{
 				"label": _("PPN"),
 				"fieldname": "total_taxes_and_charges",
+				"fieldtype": "Currency",
+				"width": 110,
+   				"options": "Company:company:default_currency",
+				"convertible": "rate",
+			},
+   			{
+				"label": _("Grand Total"),
+				"fieldname": "grand_total",
 				"fieldtype": "Currency",
 				"width": 110,
    				"options": "Company:company:default_currency",

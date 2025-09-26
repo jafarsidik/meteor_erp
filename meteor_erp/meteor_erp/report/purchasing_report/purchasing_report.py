@@ -64,6 +64,7 @@ def get_data(filters):
 			po.name.as_("purchase_order"),
 			po.status,
 			po.supplier,
+			po.grand_total,
 			po_item.item_code,
 			po_item.qty,
 			po_item.received_qty,
@@ -188,6 +189,7 @@ def prepare_data(data, filters):
 					"received_qty_amount",
 					"billed_amount",
 					"pending_amount",
+					"grand_total",
 				]
 				for field in fields:
 					po_row[field] = flt(row[field]) + flt(po_row[field])
@@ -215,43 +217,15 @@ def prepare_chart_data(pending, completed):
 
 def get_columns(filters):
 	columns = [
-		# --- Tambahan kolom Material Request ---
-		{
-			"label": _("Tanggal PR"),
-			"fieldname": "transaction_date_pr",
-			"fieldtype": "Date",
-			"width": 100,
-		},
-		{
-			"label": _("Nomor PR"),
-			"fieldname": "material_request",
-			"fieldtype": "Link",
-			"options": "Material Request",
-			"width": 150,
-		},
-		{
-			"label": _("Status PR"),
-			"fieldname": "mr_status",
-			"fieldtype": "Data",
-			"width": 100,
-		},
 		{"label": _("Tanggal PO"), "fieldname": "date", "fieldtype": "Date", "width": 90},
 		{"label": _("Expected Date PO"), "fieldname": "required_date", "fieldtype": "Date", "width": 90},
-		{
-			"label": _("Nomor PO"),
-			"fieldname": "purchase_order",
-			"fieldtype": "Link",
-			"options": "Purchase Order",
-			"width": 160,
-		},
+		{"label": _("Actual Date PO"), "fieldname": "date", "fieldtype": "Date", "width": 90},
+  		{"label": _("Nomor PO"), "fieldname": "purchase_order", "fieldtype": "Link", "options": "Purchase Order", "width": 160},
 		{"label": _("Status PO"), "fieldname": "status", "fieldtype": "Data", "width": 130},
-		{
-			"label": _("Supplier"),
-			"fieldname": "supplier",
-			"fieldtype": "Link",
-			"options": "Supplier",
-			"width": 130,
-		},
+		{ "label": _("Supplier"), "fieldname": "supplier", "fieldtype": "Link", "options": "Supplier","width": 130 },
+		
+		
+		
 		# {
 		# 	"label": _("Project"),
 		# 	"fieldname": "project",
@@ -282,7 +256,26 @@ def get_columns(filters):
 			# 	"options": "Item",
 			# 	"width": 100,
 			# },
-			
+			# --- Tambahan kolom Material Request ---
+			{
+				"label": _("Nomor PR"),
+				"fieldname": "material_request",
+				"fieldtype": "Link",
+				"options": "Material Request",
+				"width": 150,
+			},
+			{
+				"label": _("Status PR"),
+				"fieldname": "mr_status",
+				"fieldtype": "Data",
+				"width": 100,
+			},
+			{
+				"label": _("Tanggal PR"),
+				"fieldname": "transaction_date_pr",
+				"fieldtype": "Date",
+				"width": 100,
+			},
    			{
 				"label": _("MR Required By"),
 				"fieldname": "mr_required_date",
@@ -312,15 +305,22 @@ def get_columns(filters):
 				"convertible": "qty",
 			},
 			{
-				"label": _("Received Qty"),
+				"label": _("Qty Received"),
 				"fieldname": "received_qty",
 				"fieldtype": "Float",
 				"width": 120,
 				"convertible": "qty",
 			},
 			{
-				"label": _("Pending Qty"),
+				"label": _("Outstanding PO"),
 				"fieldname": "pending_qty",
+				"fieldtype": "Float",
+				"width": 80,
+				"convertible": "qty",
+			},
+   			{
+				"label": _("Qty to Bill"),
+				"fieldname": "qty_to_bill",
 				"fieldtype": "Float",
 				"width": 80,
 				"convertible": "qty",
@@ -332,15 +332,9 @@ def get_columns(filters):
 			# 	"width": 80,
 			# 	"convertible": "qty",
 			# },
+			
 			{
-				"label": _("Qty to Bill"),
-				"fieldname": "qty_to_bill",
-				"fieldtype": "Float",
-				"width": 80,
-				"convertible": "qty",
-			},
-			{
-				"label": _("Amount"),
+				"label": _("Harga"),
 				"fieldname": "amount",
 				"fieldtype": "Currency",
 				"width": 110,
@@ -348,8 +342,16 @@ def get_columns(filters):
 				"convertible": "rate",
 			},
 			{
-				"label": _("Tax / PPN"),
+				"label": _("PPN"),
 				"fieldname": "total_taxes_and_charges",
+				"fieldtype": "Currency",
+				"width": 110,
+				"options": "Company:company:default_currency",
+				"convertible": "rate",
+			},
+   			{
+				"label": _("Harga Total"),
+				"fieldname": "grand_total",
 				"fieldtype": "Currency",
 				"width": 110,
 				"options": "Company:company:default_currency",
