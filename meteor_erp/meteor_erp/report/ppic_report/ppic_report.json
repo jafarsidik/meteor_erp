@@ -7,11 +7,11 @@
  "docstatus": 0,
  "doctype": "Report",
  "filters": [],
- "idx": 0,
+ "idx": 12,
  "is_standard": "Yes",
  "letter_head": "",
  "letterhead": null,
- "modified": "2025-09-10 11:00:35.822252",
+ "modified": "2025-10-06 10:02:31.980341",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "PPIC Report",
@@ -29,6 +29,9 @@
   },
   {
    "role": "Manufacturing Manager"
+  },
+  {
+   "role": "superadmin"
   }
  ],
  "timeout": 0

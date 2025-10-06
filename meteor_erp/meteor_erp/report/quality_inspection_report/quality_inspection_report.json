@@ -7,12 +7,12 @@
  "docstatus": 0,
  "doctype": "Report",
  "filters": [],
- "idx": 0,
+ "idx": 4,
  "is_standard": "Yes",
  "json": "{}",
  "letter_head": "",
  "letterhead": null,
- "modified": "2025-09-12 09:25:22.662740",
+ "modified": "2025-10-06 10:03:04.889552",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Quality Inspection Report",
@@ -30,6 +30,9 @@
   },
   {
    "role": "Stock Manager"
+  },
+  {
+   "role": "superadmin"
   }
  ],
  "timeout": 0

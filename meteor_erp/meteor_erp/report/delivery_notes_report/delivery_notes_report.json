@@ -11,7 +11,7 @@
  "is_standard": "Yes",
  "json": "{}",
  "letterhead": null,
- "modified": "2025-09-16 22:38:54.948301",
+ "modified": "2025-10-06 09:54:23.108887",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Delivery Notes Report",
@@ -40,13 +40,13 @@
    "role": "Delivery User"
   },
   {
-   "role": "superadmin"
-  },
-  {
    "role": "Admin"
   },
   {
    "role": "Quality Manager"
+  },
+  {
+   "role": "superadmin"
   }
  ],
  "timeout": 0

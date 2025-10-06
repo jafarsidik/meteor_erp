@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"iuEcRmXvq9\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Reports</span>\",\"col\":12}},{\"id\":\"NcDVuoXJsW\",\"type\":\"card\",\"data\":{\"card_name\":\"IGH Report\",\"col\":4}},{\"id\":\"TP0a1qme_c\",\"type\":\"card\",\"data\":{\"card_name\":\"Marketing & Sales\",\"col\":4}},{\"id\":\"fRLmuBo7pV\",\"type\":\"card\",\"data\":{\"card_name\":\"Purchasing\",\"col\":4}},{\"id\":\"O1TsoB1frp\",\"type\":\"card\",\"data\":{\"card_name\":\"PPIC & Production\",\"col\":4}},{\"id\":\"bFRCBESOO7\",\"type\":\"card\",\"data\":{\"card_name\":\"RnD\",\"col\":4}},{\"id\":\"561aqF7N16\",\"type\":\"card\",\"data\":{\"card_name\":\"Warehouse\",\"col\":4}},{\"id\":\"z_uGnqe0hH\",\"type\":\"card\",\"data\":{\"card_name\":\"QA/QC Report\",\"col\":4}},{\"id\":\"iwEZ_LJwsx\",\"type\":\"card\",\"data\":{\"card_name\":\"Others Report\",\"col\":4}}]",
+ "content": "[{\"id\":\"iuEcRmXvq9\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Reports</span>\",\"col\":12}},{\"id\":\"NcDVuoXJsW\",\"type\":\"card\",\"data\":{\"card_name\":\"Report\",\"col\":4}}]",
  "creation": "2025-07-25 10:21:05.680896",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,108 +13,6 @@
  "is_hidden": 0,
  "label": "Reports",
  "links": [
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "RnD",
-   "link_count": 9,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Sample Request",
-   "link_count": 0,
-   "link_to": "RnD Report",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "BOM Search ",
-   "link_count": 0,
-   "link_to": "BOM Search",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "BPOM Monitor",
-   "link_count": 0,
-   "link_to": "BPOM Monitor",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Items To Be Requested",
-   "link_count": 0,
-   "link_to": "Items To Be Requested",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Item-wise Purchase History",
-   "link_count": 0,
-   "link_to": "Item-wise Purchase History",
-   "link_type": "Report",
-   "onboard": 0,
-   "report_ref_doctype": "Purchase Order",
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Requested Items to Order and Receive",
-   "link_count": 0,
-   "link_to": "Requested Items to Order and Receive",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Material Requests for which Supplier Quotations are not created",
-   "link_count": 0,
-   "link_to": "Material Requests for which Supplier Quotations are not created",
-   "link_type": "Report",
-   "onboard": 0,
-   "report_ref_doctype": "Material Request",
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Stock Ageing",
-   "link_count": 0,
-   "link_to": "Stock Ageing",
-   "link_type": "Report",
-   "onboard": 0,
-   "report_ref_doctype": "Item",
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Stock Projected Qty",
-   "link_count": 0,
-   "link_to": "Stock Projected Qty",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
   {
    "description": "Modul Report ini meliputi Transaksi Stok, Packaging",
    "hidden": 0,
@@ -249,26 +147,6 @@
    "link_to": "Delivery Note Trends",
    "link_type": "Report",
    "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Others Report",
-   "link_count": 1,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Delivery Note Trends",
-   "link_count": 0,
-   "link_to": "Delivery Note Trends",
-   "link_type": "Report",
-   "onboard": 0,
-   "report_ref_doctype": "Delivery Note",
    "type": "Link"
   },
   {
@@ -416,175 +294,6 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Purchasing",
-   "link_count": 16,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Purchasing Report",
-   "link_count": 0,
-   "link_to": "Purchase Register",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Purchase Analytics",
-   "link_count": 0,
-   "link_to": "Purchase Analytics",
-   "link_type": "Report",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Purchase Order Analysis",
-   "link_count": 0,
-   "link_to": "Purchase Order Analysis",
-   "link_type": "Report",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Purchase Order Trends",
-   "link_count": 0,
-   "link_to": "Purchase Order Trends",
-   "link_type": "Report",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Purchase Receipt Trends",
-   "link_count": 0,
-   "link_to": "Purchase Receipt Trends",
-   "link_type": "Report",
-   "onboard": 1,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Procurement Tracker",
-   "link_count": 0,
-   "link_to": "Procurement Tracker",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Supplier Ledger Summary",
-   "link_count": 0,
-   "link_to": "Supplier Ledger Summary",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Supplier Quotation Comparison",
-   "link_count": 0,
-   "link_to": "Supplier Quotation Comparison",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Supplier-Wise Sales Analytics",
-   "link_count": 0,
-   "link_to": "Supplier-Wise Sales Analytics",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Material Requests for which Supplier Quotations are not created",
-   "link_count": 0,
-   "link_to": "Material Requests for which Supplier Quotations are not created",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Items To Be Requested",
-   "link_count": 0,
-   "link_to": "Items To Be Requested",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Billed Items To Be Received",
-   "link_count": 0,
-   "link_to": "Billed Items To Be Received",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Delivered Items To Be Billed",
-   "link_count": 0,
-   "link_to": "Delivered Items To Be Billed",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Received Items To Be Billed",
-   "link_count": 0,
-   "link_to": "Received Items To Be Billed",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Requested Items To Be Transferred",
-   "link_count": 0,
-   "link_to": "Requested Items To Be Transferred",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Requested Items to Order and Receive",
-   "link_count": 0,
-   "link_to": "Requested Items to Order and Receive",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "QA/QC Report",
    "link_count": 5,
    "link_type": "DocType",
@@ -637,166 +346,6 @@
    "label": "Cost of Poor Quality Report",
    "link_count": 0,
    "link_to": "Cost of Poor Quality Report",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "description": "Modul PPIC digunakan untuk mengatur perencanaan produksi dan pengendalian persediaan. Modul Production berfungsi untuk mengelola seluruh proses manufaktur dari awal hingga akhir.",
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "PPIC & Production",
-   "link_count": 15,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Production Planning Report",
-   "link_count": 0,
-   "link_to": "Production Planning Report",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Production Analytics",
-   "link_count": 0,
-   "link_to": "Production Analytics",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Quality Inspection Summary",
-   "link_count": 0,
-   "link_to": "Quality Inspection Summary",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Downtime Analysis",
-   "link_count": 0,
-   "link_to": "Downtime Analysis",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Job Card Summary",
-   "link_count": 0,
-   "link_to": "Job Card Summary",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "BOM Search",
-   "link_count": 0,
-   "link_to": "BOM Search",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "BOM Stock Report ",
-   "link_count": 0,
-   "link_to": "BOM Stock Report",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "BOM Operations Time",
-   "link_count": 0,
-   "link_to": "BOM Operations Time",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Open Work Orders",
-   "link_count": 0,
-   "link_to": "Open Work Orders",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Completed Work Orders",
-   "link_count": 0,
-   "link_to": "Completed Work Orders",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Issued Items Against Work Order",
-   "link_count": 0,
-   "link_to": "Issued Items Against Work Order",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Work Orders in Progress",
-   "link_count": 0,
-   "link_to": "Work Orders in Progress",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Work Order Consumed Materials ",
-   "link_count": 0,
-   "link_to": "Work Order Consumed Materials",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Work Order Stock Report",
-   "link_count": 0,
-   "link_to": "Work Order Stock Report",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Work Order Summary",
-   "link_count": 0,
-   "link_to": "Work Order Summary",
    "link_type": "Report",
    "onboard": 0,
    "type": "Link"
@@ -979,9 +528,188 @@
    "link_type": "Report",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Report",
+   "link_count": 17,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Purchasing Report",
+   "link_count": 0,
+   "link_to": "Purchasing Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Marketing Report",
+   "link_count": 0,
+   "link_to": "Marketing Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Marketing Omzet Report",
+   "link_count": 0,
+   "link_to": "Marketing Omzet Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "PPIC Report",
+   "link_count": 0,
+   "link_to": "PPIC Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "RnD Report",
+   "link_count": 0,
+   "link_to": "RnD Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Quality Inspection Report",
+   "link_count": 0,
+   "link_to": "Quality Inspection Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Non Conformance",
+   "link_count": 0,
+   "link_to": "Non Conformance",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "BPOM Monitor",
+   "link_count": 0,
+   "link_to": "BPOM Monitor",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Stock Ledger",
+   "link_count": 0,
+   "link_to": "Stock Ledger",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Stock Balance",
+   "link_count": 0,
+   "link_to": "Stock Balance",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Stock Summary",
+   "link_count": 0,
+   "link_to": "stock-balance",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Stock Raw Material Report",
+   "link_count": 0,
+   "link_to": "Stock Raw Material Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Stock Packaging Report",
+   "link_count": 0,
+   "link_to": "Stock Packaging Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Detail Warehouse",
+   "link_count": 0,
+   "link_to": "Detail Warehouse",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Material Request Report",
+   "link_count": 0,
+   "link_to": "Material Request Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Receipt Order of Raw Material and Packaging",
+   "link_count": 0,
+   "link_to": "Receipt Order of Raw Material and Packaging",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Delivery Notes Report",
+   "link_count": 0,
+   "link_to": "Delivery Notes Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2025-09-16 22:39:56.819286",
+ "modified": "2025-10-06 10:20:07.667511",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Reports",

@@ -7,10 +7,10 @@
  "docstatus": 0,
  "doctype": "Report",
  "filters": [],
- "idx": 0,
+ "idx": 14,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2025-09-10 10:33:54.612148",
+ "modified": "2025-10-06 10:00:55.019919",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Marketing Report",
@@ -34,6 +34,9 @@
   },
   {
    "role": "Stock User"
+  },
+  {
+   "role": "superadmin"
   }
  ],
  "timeout": 0

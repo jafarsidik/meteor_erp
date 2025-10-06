@@ -10,7 +10,7 @@
  "idx": 0,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2025-09-16 22:31:43.699510",
+ "modified": "2025-10-06 10:18:59.728517",
  "modified_by": "Administrator",
  "module": "Meteor ERP",
  "name": "Receipt Order of Raw Material and Packaging",
@@ -31,6 +31,9 @@
   },
   {
    "role": "Supplier"
+  },
+  {
+   "role": "superadmin"
   }
  ],
  "timeout": 0
