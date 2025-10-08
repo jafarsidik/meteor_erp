@@ -1,0 +1,25 @@
+[
+ {
+  "align": "Left",
+  "content": "\n<table class=\"table table-bordered align-middle w-100\">\n  <tbody>\n    <tr>\n      <td class=\"text-center\" rowspan=\"3\" style=\"width:22%;\">\n        {% set logo = frappe.db.get_value(\"Company\", doc.company, \"company_logo\") %}\n        {% if logo %}\n          <img src=\"{{ logo }}\" width=\"90\" alt=\"Company Logo\"><br>\n        {% endif %}\n      </td>\n    </tr>\n\n    <tr>\n      <td class=\"text-center fw-bold\" rowspan=\"4\" colspan=\"3\" style=\"width:50%;\">\n        FORMULIR<br><b>{{ doc.doctype }}</b>\n      </td>\n      <td class=\"text-start\" style=\"width:14%;\">Halaman</td>\n      <td class=\"text-start\" style=\"width:14%;\">1 dari 2</td>\n    </tr>\n\n    <tr>\n      <td class=\"text-start\">No. Dok</td>\n      <td class=\"text-start\">: {{ doc.name }}</td>\n    </tr>\n\n    <tr>\n      <td rowspan=\"2\" class=\"small fw-bold text-center align-middle\">\n        PT INDO GREENLIFE HARVEST\n      </td>\n      <td class=\"text-start\">Revisi</td>\n      <td class=\"text-start\">: 0</td>\n    </tr>\n\n    <tr>\n      <td class=\"text-start\">Berlaku</td>\n      <td class=\"text-start\">: -</td>\n    </tr>\n  </tbody>\n</table>",
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Letter Head",
+  "footer": null,
+  "footer_align": "Left",
+  "footer_image": null,
+  "footer_image_height": 0.0,
+  "footer_image_width": 0.0,
+  "footer_script": null,
+  "footer_source": "HTML",
+  "header_script": null,
+  "image": null,
+  "image_height": 0.0,
+  "image_width": 0.0,
+  "is_default": 1,
+  "letter_head_name": "IGH",
+  "modified": "2025-10-09 02:46:56.049514",
+  "name": "IGH",
+  "source": "HTML"
+ }
+]

@@ -252,6 +252,17 @@ fixtures = [
     "Workflow State",
     "Workflow Action Master",
     "Workflow",
+    {"dt": "Letter Head", "filters": [
+        ["name", "in", [
+            "IGH"
+        ]]
+    ]},
+    {"dt": "Print Format", "filters": [
+        ["name", "in", [
+            "Print Sales Order Meteor",
+            "Print Purchase Order Meteor",
+        ]]
+    ]},
     # "Raw Material Group",
     # "Packaging Group",
     # "Product Category",
