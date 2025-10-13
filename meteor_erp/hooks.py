@@ -261,6 +261,8 @@ fixtures = [
         ["name", "in", [
             "Print Sales Order Meteor",
             "Print Purchase Order Meteor",
+            "Print Material Request",
+            "Print Job Card"
         ]]
     ]},
     # "Raw Material Group",
