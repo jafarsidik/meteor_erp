@@ -36,13 +36,13 @@ frappe.query_reports["Purchasing Report"] = {
 				report.refresh();
 			},
 		},
-		{
-			fieldname: "project",
-			label: __("Project"),
-			fieldtype: "Link",
-			width: "80",
-			options: "Project",
-		},
+		// {
+		// 	fieldname: "project",
+		// 	label: __("Project"),
+		// 	fieldtype: "Link",
+		// 	width: "80",
+		// 	options: "Project",
+		// },
 		{
 			fieldname: "name",
 			label: __("Purchase Order"),
