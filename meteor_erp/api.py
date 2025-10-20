@@ -1,7 +1,7 @@
 import frappe
 #from frappe.model.naming import get_default_naming_series
 #from frappe.model.mapper import get_mapped_doc
-#from frappe.utils import cint, cstr, flt, getdate, get_time
+#from frappe.utils import cint, cstr, flt, getdate, get_time 
 from frappe import _
 #from frappe.model.document import Document
 #from frappe.model import defaultfields
