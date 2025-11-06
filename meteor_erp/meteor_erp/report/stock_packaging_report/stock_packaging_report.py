@@ -34,6 +34,7 @@ def execute(filters=None):
 
     columns = get_columns(filters)
     item_map = get_item_details(filters)
+    batch_map = get_batch_details()  # 🆕 ambil data batch
     iwb_map = get_item_warehouse_batch_map(filters, float_precision)
 
     data = []
@@ -43,6 +44,9 @@ def execute(filters=None):
                 for batch in sorted(iwb_map[item][wh]):
                     qty_dict = iwb_map[item][wh][batch]
                     if qty_dict.opening_qty or qty_dict.in_qty or qty_dict.out_qty or qty_dict.bal_qty:
+                        batch_detail = batch_map.get(batch)
+                        batch_expiry_date = batch_detail.expiry_date if batch_detail else None
+
                         data.append({
                             "item_code": item,
                             "item_name": item_map[item]["item_name"],
@@ -53,6 +57,7 @@ def execute(filters=None):
                             "out_qty": flt(qty_dict.out_qty, float_precision),
                             "bal_qty": flt(qty_dict.bal_qty, float_precision),
                             "stock_uom": item_map[item]["stock_uom"],
+                            "batch_expiry_date": batch_expiry_date,  # 🆕
                             "custom_bpom_number_expiration_date": item_map[item]["custom_bpom_number_expiration_date"],
                             "custom_bpom_number": item_map[item]["custom_bpom_number"],
                             "custom_halal_registry_number": item_map[item]["custom_halal_registry_number"],
@@ -77,7 +82,8 @@ def get_columns(filters):
         {"label": _("Sisa Qty"), "fieldname": "bal_qty", "fieldtype": "Float", "width": 100},
         {"label": _("UOM"), "fieldname": "stock_uom", "fieldtype": "Data", "width": 80},
         # 🔽 FIELD TAMBAHAN
-        {"label": _("BPOM Expiry"), "fieldname": "custom_bpom_number_expiration_date", "fieldtype": "Data", "width": 120},
+        #{"label": _("BPOM Expiry"), "fieldname": "custom_bpom_number_expiration_date", "fieldtype": "Data", "width": 120},
+        {"label": _("Expired Date Batch"), "fieldname": "batch_expiry_date", "fieldtype": "Data", "width": 120},
         {"label": _("BPOM TR"), "fieldname": "custom_bpom_number", "fieldtype": "Data", "width": 120},
         {"label": _("Halal Registry Number"), "fieldname": "custom_halal_registry_number", "fieldtype": "Data", "width": 160},
         {"label": _("Halal / Non Halal"), "fieldname": "custom_is_halal", "fieldtype": "Data", "width": 140},
@@ -233,3 +239,11 @@ def get_item_details(filters):
         item_map.setdefault(d.name, d)
 
     return item_map
+
+
+def get_batch_details():
+    """Ambil expiry_date dari Doctype Batch"""
+    batch_map = {}
+    for d in frappe.get_all("Batch", fields=["name", "expiry_date"]):
+        batch_map[d.name] = d
+    return batch_map

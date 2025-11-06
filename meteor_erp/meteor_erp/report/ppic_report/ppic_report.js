@@ -56,18 +56,18 @@ frappe.query_reports["PPIC Report"] = {
 				return frappe.db.get_link_options("Item", txt);
 			},
 		},
-		{
-			label: __("Age"),
-			fieldname: "age",
-			fieldtype: "Int",
-			default: "0",
-		},
-		{
-			label: __("Charts Based On"),
-			fieldname: "charts_based_on",
-			fieldtype: "Select",
-			options: ["Status", "Age", "Quantity"],
-			default: "Status",
-		},
+		// {
+		// 	label: __("Age"),
+		// 	fieldname: "age",
+		// 	fieldtype: "Int",
+		// 	default: "0",
+		// },
+		// {
+		// 	label: __("Charts Based On"),
+		// 	fieldname: "charts_based_on",
+		// 	fieldtype: "Select",
+		// 	options: ["Status", "Age", "Quantity"],
+		// 	default: "Status",
+		// },
 	]
 };

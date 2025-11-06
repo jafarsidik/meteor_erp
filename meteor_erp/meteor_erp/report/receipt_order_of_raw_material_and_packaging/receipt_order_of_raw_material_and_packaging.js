@@ -36,13 +36,13 @@ frappe.query_reports["Receipt Order of Raw Material and Packaging"] = {
 				report.refresh();
 			},
 		},
-		{
-			fieldname: "project",
-			label: __("Project"),
-			fieldtype: "Link",
-			width: "80",
-			options: "Project",
-		},
+		// {
+		// 	fieldname: "project",
+		// 	label: __("Project"),
+		// 	fieldtype: "Link",
+		// 	width: "80",
+		// 	options: "Project",
+		// },
 		{
 			fieldname: "name",
 			label: __("Purchase Order"),
