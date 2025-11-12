@@ -35,7 +35,7 @@ def execute(filters=None):
 	precision = cint(frappe.db.get_single_value("System Settings", "float_precision"))
 	bundle_details = {}
 
-	if filters.get("segregate_serial_batch_bundle"):
+	if filters.get("segregate_serial_batch_bundle",1):
 		bundle_details = get_serial_batch_bundle_details(sl_entries, filters)
 
 	data = []
@@ -57,7 +57,8 @@ def execute(filters=None):
 		batch_balance_dict[filters.batch_no] = [actual_qty, stock_value]
 
 	for sle in sl_entries:
-		item_detail = item_details[sle.item_code]
+		#item_detail = item_details[sle.item_code]
+		item_detail = item_details.get(sle.item_code, {})
 
 		sle.update(item_detail)
 		if bundle_info := bundle_details.get(sle.serial_and_batch_bundle):
@@ -74,7 +75,7 @@ def execute(filters=None):
 				batch_balance_dict[sle.batch_no][0] += sle.actual_qty
 				batch_balance_dict[sle.batch_no][1] += stock_value
 
-			if filters.get("segregate_serial_batch_bundle"):
+			if filters.get("segregate_serial_batch_bundle",1):
 				actual_qty = batch_balance_dict[sle.batch_no][0]
 
 			if sle.voucher_type == "Stock Reconciliation" and not sle.actual_qty:
@@ -372,8 +373,11 @@ def get_stock_ledger_entries(filters, items):
 	to_date = get_datetime(filters.to_date + " 23:59:59")
 
 	sle = frappe.qb.DocType("Stock Ledger Entry")
+	sbbi = frappe.qb.DocType("Serial and Batch Entry")
 	query = (
 		frappe.qb.from_(sle)
+		.left_join(sbbi)
+    	.on(sle.serial_and_batch_bundle == sbbi.parent)
 		.select(
 			sle.item_code,
 			sle.posting_datetime.as_("date"),

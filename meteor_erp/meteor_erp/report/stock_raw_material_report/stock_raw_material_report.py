@@ -45,7 +45,9 @@ def execute(filters=None):
 
                     if qty_dict.opening_qty or qty_dict.in_qty or qty_dict.out_qty or qty_dict.bal_qty:
                         batch_detail = batch_map.get(batch)
-                        batch_expiry_date = batch_detail.expiry_date if batch_detail else None
+                        #batch_expiry_date = batch_detail.expiry_date if batch_detail else None
+                        batch_expiry_date = batch_detail.get("expiry_date") if batch_detail else None
+
 
                         data.append({
                             "item_code": item,
@@ -87,7 +89,7 @@ def get_columns(filters):
 
 def get_batch_details():
     batch_map = {}
-    for d in frappe.get_all("Batch", fields=["name", "expiry_date"]):
+    for d in frappe.get_all("Batch", fields=["name", "item","expiry_date"]):
         batch_map[d.name] = d
     return batch_map
 
@@ -234,7 +236,7 @@ def get_item_details(filters):
         "description",
         "stock_uom",
         # 🔽 FIELD BARU DARI ITEM
-        "expiry_date",
+        #"expiry_date",
         #"custom_bpom_number_expiration_date",
         "custom_bpom_number",
         "custom_halal_registry_number",
